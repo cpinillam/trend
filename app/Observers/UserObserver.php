@@ -17,6 +17,7 @@ class UserObserver
     {
         $profile =  Profile::create([
             'user_id' => $user->id,
+            'username' => $user->username,
             ]);
 
     }
