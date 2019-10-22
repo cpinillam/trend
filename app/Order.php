@@ -8,9 +8,9 @@ class Order extends Model
 {
     //
 
-    public function status()
+    public function user()
     {
-        return $this->belongsTo('App\Order_status','id');
+        return $this->belongsTo('App\Order_status');
 
     }
 }

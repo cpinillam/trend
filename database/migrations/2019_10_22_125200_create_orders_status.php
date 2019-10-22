@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class OrdersStatus extends Migration
+class CreateOrdersStatus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class OrdersStatus extends Migration
      */
     public function up()
     {
-        Schema::create('orders_status', function (Blueprint $table) {
+        Schema::create('orders_status', function (Blueprint $table) {         
             $table->bigIncrements('id');
-            $table->string('status', 100);
+            $table->char('status', 100);
         });
-
     }
 
     /**
@@ -27,6 +26,6 @@ class OrdersStatus extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('orders_status');
     }
 }
