@@ -26,3 +26,6 @@ Route::get('/new-product', function () {
     return view('products/products-new-form');
 });
 
+
+
+Route::get('/', 'ProfileController@index');
