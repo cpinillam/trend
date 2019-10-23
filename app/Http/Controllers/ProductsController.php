@@ -35,7 +35,25 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+
+        $data = $request->validate([
+            'user_id' => 'required',
+            'name' => 'required'
+            
+        ]);
+
+        
+        $product = new Products();
+        $product->user_id = $request->user_id;
+        $product->name = $request->name;
+        $product->initial_price = $request->initial_price;
+        $product->description = $request->description;
+
+        $product->save();
+        return redirect('home');
+
+
     }
 
     /**

@@ -10,11 +10,12 @@ class Profile extends Model
     {
        return $this->hasOne('App\User');
     }
+
+    
     protected $fillable = [
         
         'username','user_id',
-        // 'email', 'last_name','bio','address','post_code','facebook','instagram','youtube','twitch'
-    
+        
             
     ];
 
