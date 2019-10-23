@@ -10,4 +10,7 @@ class Products extends Model
 
         return $this->hasOne('App\User');
     }
+    protected $fillable = [
+        'user_id','name','description'
+    ];
 }

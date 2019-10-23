@@ -62,9 +62,12 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show(Products $product)
     {
+        $productDetail = $product;
         //
+        return view('productDetail', ['productDetails' => $productDetail]);
+
     }
 
     /**
