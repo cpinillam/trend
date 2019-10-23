@@ -83,7 +83,7 @@
                 <h1>Profiles</h1>
                 <ul>
                 @foreach($profiles as $profile):
-                <li>{{$profile}}</li>
+                <li>{{$profile->username}}</li>
                 @endforeach
                 </ul>
 
