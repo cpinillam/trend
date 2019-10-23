@@ -15,7 +15,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $profiles=Profile::all();
+        return view('content',['profiles' => $profiles]);
     }
 
     /**
@@ -26,15 +27,14 @@ class ProfileController extends Controller
     public function create(array $data)
     {
         
-        dd($data);
-        
+        /* 
         $profile = Profile::create([
 
             'name' => request('name'),
             'user_id' => auth()->id()
 
            
-        ]);
+        ]); */
        
     }
 
@@ -57,7 +57,9 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        //
+        $profileDetails = $profile;
+        //dd($profileDetails);
+        return view('profileDetail',['profileDetails' => $profileDetails]);
     }
 
     /**
@@ -68,7 +70,8 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-        //
+        //$profileToEdit = $profile;
+        return view('editProfile',['profile' => $profile]);
     }
 
     /**
@@ -80,7 +83,8 @@ class ProfileController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
-        //
+        $profile->update($request->all());
+        return redirect('profile');
     }
 
     /**
