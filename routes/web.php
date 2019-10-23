@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -23,3 +23,6 @@ Route::get('/new-product', function () {
     return view('products/products-new-form');
 });
 
+
+
+Route::get('/', 'ProfileController@index');
