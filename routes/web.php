@@ -2,9 +2,9 @@
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -15,3 +15,6 @@ Route::get('/new-product', function () {
 });
 
 Route::resource('/product','ProductsController');
+
+
+Route::get('/', 'ProfileController@index');
