@@ -14,7 +14,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $products=Products::all();
+        
+        return json_encode($products);
     }
 
     /**
@@ -35,7 +37,25 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+
+        $data = $request->validate([
+            'user_id' => 'required',
+            'name' => 'required'
+            
+        ]);
+
+        
+        $product = new Products();
+        $product->user_id = $request->user_id;
+        $product->name = $request->name;
+        $product->initial_price = $request->initial_price;
+        $product->description = $request->description;
+
+        $product->save();
+        return redirect("profile/$product->user_id");
+
+
     }
 
     /**
@@ -44,9 +64,12 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show(Products $product)
     {
+        $productDetail = $product;
         //
+        return view('productDetail', ['productDetails' => $productDetail]);
+
     }
 
     /**

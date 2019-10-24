@@ -10644,3 +10644,8 @@ a.text-dark:focus {
   }
 }
 
+.test{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
