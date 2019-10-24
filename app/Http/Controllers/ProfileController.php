@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use App\User;
+use App\Products;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -84,7 +85,7 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile)
     {
         $profile->update($request->all());
-        return redirect('profile');
+        return redirect("profile/$profile->user_id");
     }
 
     /**
@@ -96,5 +97,11 @@ class ProfileController extends Controller
     public function destroy(Profile $profile)
     {
         //
+    }
+
+    public function getProductsByUser($user)
+    {
+        $products=Products::all();
+        return view("profile/$user",['products' => $products]);
     }
 }

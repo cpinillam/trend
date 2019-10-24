@@ -11,9 +11,10 @@ Route::get('/', 'ProfileController@index');
 Auth::routes();
 
 Route::resource('/profile','ProfileController');
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/new-product', function () {
+Route::get('/home', 'ProductsController@index');
+
+Route::get('new-product', function () {
     return view('products/products-new-form');
 });
 

@@ -14,8 +14,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //$products=Products::all();
-        //return view('home',['products' => $products]);
+        $products=Products::all();
+        
+        return json_encode($products);
     }
 
     /**
@@ -52,7 +53,7 @@ class ProductsController extends Controller
         $product->description = $request->description;
 
         $product->save();
-        return redirect('home');
+        return redirect("profile/$product->user_id");
 
 
     }
@@ -63,9 +64,12 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show(Products $product)
     {
+        $productDetail = $product;
         //
+        return view('productDetail', ['productDetails' => $productDetail]);
+
     }
 
     /**
