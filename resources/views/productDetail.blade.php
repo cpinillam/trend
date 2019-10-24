@@ -7,3 +7,9 @@
 <h3>Last update</h3>
 <br>
 {{$productDetails->created_at}}
+
+<form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
+    @csrf
+    <input type="submit" class="btn btn-outline-primary btn-sm " value="Edit">
+</form>
+
