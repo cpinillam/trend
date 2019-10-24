@@ -5,27 +5,40 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Dashboard
+                    <a style="float:right;" href="../new-product"><button class="btn btn-primary" >+ Nuevo producto </button></a>
 
-                <div class="card-body">
+                </div>
+
+                <div class="card-body" style="display:flex;">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                      <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; background-color:black;"  alt="">  
-                        
-                    <a href="../new-product"><button class="btn btn-primary" >+ Nuevo producto </button></a>
+                      <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; height:200px;background-color:black;"  alt="">  
+                        <div style="padding:15px;">
+                    <h6>UserName: {{$profileDetails->username}}</h6>
+                    <h6>Firstname: {{$profileDetails->first_name}}</h6>
+                    <h6>Last Name: {{$profileDetails->last_name}}</h6>
+                    <h6>Bio: {{$profileDetails->bio}}</h6>
+                    <h6>Address: {{$profileDetails->address}}</h6>
+                    <h6>Postak code: {{$profileDetails->post_code}}</h6>
 
-                    <h1>User_Info:</h1>
-                    <h1>Name: {{$profileDetails->username}}</h1>
-                    <div id="user_id" data-id="{{$profileDetails->id}}"><h2>Unique ID: {{$profileDetails->id}}</h2></div>
+                    <h2>Follow me at:</h2>
+                    <h6>Facebook: <a href="{{$profileDetails->facebook}}">{{$profileDetails->facebook}}</a></h6>
+                    <h6>Instagram: <a href="{{$profileDetails->instagram}}">{{$profileDetails->instagram}}</a></h6>
+                    <h6>Youtube: <a href="{{$profileDetails->youtube}}">{{$profileDetails->youtube}}</a></h6>
+                    <h6>Twitch: <a href="{{$profileDetails->twitch}}">{{$profileDetails->twitch}}</a></h6>
+
+                    <div id="user_id" data-id="{{$profileDetails->id}}">
+                    </div>
                     <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
                         @csrf
                         <input type="submit" class="btn btn-outline-primary btn-sm " value="Edit">
                     </form>
-
+                </div> 
                      </div>
 
                 </div>
@@ -41,7 +54,7 @@
     </div>
 </div>
 <script>
-        fetch("http://127.0.0.1:8000/product").then(value=>value.json()).then( value=>{
+        fetch("http://localhost:8000/product").then(value=>value.json()).then( value=>{
     let container = document.querySelector("#product");
     let user_id = document.getElementById('user_id').getAttribute("data-id");
                  
