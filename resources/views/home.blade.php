@@ -22,8 +22,11 @@
                 </div>
                 <div class="card" style="margin-top:30px;">
                 <div class="card-header">:::: PRODUCTOS ::::</div>
-                <div class="card-body">
-                 <div style=" height: 100px; width: 100px;background-color:rgb(143, 143, 143);">i</div>
+                <div class="card-body" style="display:flex; flex-wrap: wrap" >
+                    @foreach ($products as $product )
+                    <div style=" height: 100px; width: 100px;background-color:rgb(143, 143, 143);margin:10px;">i</div>
+                    @endforeach
+                 
                     
                 </div>
             </div>

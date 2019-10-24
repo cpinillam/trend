@@ -10,4 +10,17 @@ class Products extends Model
 
         return $this->hasOne('App\User');
     }
+
+
+    public function getProductsById($user_id){
+        $sql=DB::table('products')
+                ->select(DB::raw('*'))
+                ->where('user_id','=',$user_id)
+                ->get();
+
+        return $sql;
+    }
+
+
+
 }
