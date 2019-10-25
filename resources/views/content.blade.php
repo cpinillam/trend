@@ -7,11 +7,11 @@
             <div class="card">
                 <div class="card-header">Profiles</div>
                 @foreach ($profiles as $profile)
-                    <div class="bg-primary m-2">
-                        {{$profile->username}}
+                    <div style="margin:10px; float:left;">
+                        
                     <form action="{{route('profile.show',$profile->id)}}" method="get">
                             @csrf
-                            <input type="submit" value="Detail" class="btn btn-success">
+                            <input type="submit" value="{{$profile->username}}" class="btn btn-success" style="width:150px; height: 150px;">
                     </form>
                     </div>
                 @endforeach

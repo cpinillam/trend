@@ -11,7 +11,7 @@ class Products extends Model
         return $this->hasOne('App\User');
     }
 
-
+    //To Do Ask best way to transfer date, DB "acoplamentation"
     public function getProductsById($user_id){
         $sql=DB::table('products')
                 ->select(DB::raw('*'))

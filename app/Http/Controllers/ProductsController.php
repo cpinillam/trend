@@ -15,7 +15,6 @@ class ProductsController extends Controller
     public function index()
     {
         $products=Products::all();
-        
         return json_encode($products);
     }
 
@@ -37,11 +36,12 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
-
+    
         $data = $request->validate([
             'user_id' => 'required',
-            'name' => 'required'
+            'name' => 'required',
+            'initial_price' => 'required',
+            'description' => 'required'
             
         ]);
 
