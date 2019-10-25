@@ -84,11 +84,7 @@
 
 <!-- To Do ask Using fetch and API -->
 <script>
-<<<<<<< HEAD
     fetch("http://localhost:8000/product").then(value=>value.json()).then( value=>{
-=======
-        fetch("http://127.0.0.1:8000/product").then(value=>value.json()).then( value=>{
->>>>>>> 0f863689a3a85f16e4260b15a319a24ab5e986c9
     let container = document.querySelector("#product");
     let user_id = document.getElementById('user_id').getAttribute("data-id");
                  
