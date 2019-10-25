@@ -54,7 +54,7 @@
     </div>
 </div>
 <script>
-        fetch("http://localhost:8000/product").then(value=>value.json()).then( value=>{
+    fetch("http://localhost:8000/product").then(value=>value.json()).then( value=>{
     let container = document.querySelector("#product");
     let user_id = document.getElementById('user_id').getAttribute("data-id");
                  

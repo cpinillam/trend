@@ -12,10 +12,22 @@ class Profile extends Model
     }
 
     
-    protected $fillable = [
+    protected $fillable =
+     
+    [
         
-        'username',
-        'user_id','first_name','email', 'last_name','bio','address','post_code','facebook','instagram','youtube','twitch'
+         'username',
+         'user_id',
+         'first_name',
+         'email',
+         'last_name',
+         'bio',
+         'address',
+         'post_code',
+         'facebook',
+         'instagram',
+         'youtube',
+         'twitch'
     
             
     ];
