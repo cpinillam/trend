@@ -4,21 +4,16 @@
 
 Route::get('/', 'ProfileController@index');
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
 Auth::routes();
 
 Route::resource('/profile','ProfileController');
 
-Route::get('/home', 'ProductsController@index');
-
-Route::get('new-product', function () {
-    return view('products/products-new-form');
-});
-
 Route::resource('/product','ProductsController');
 
+// Proteccion de rutas
 
-Route::get('/', 'ProfileController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('new-product', function () {
+        return view('products/products-new-form');
+    });
+});

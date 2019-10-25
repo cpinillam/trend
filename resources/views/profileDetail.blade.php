@@ -7,26 +7,49 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
+                <div class="card-body" style="display:flex;">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                      <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; background-color:black;"  alt="">  
+
+                    <div class="col-md-6">
+                            <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
+                          <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                        </div>
+                    </div>
                         
-                    <a href="../new-product"><button class="btn btn-primary" >+ Nuevo producto </button></a>
+                        
 
-                    <h1>User_Info:</h1>
-                    <h1>Name: {{$profileDetails->username}}</h1>
-                    <div id="user_id" data-id="{{$profileDetails->id}}"><h2>Unique ID: {{$profileDetails->id}}</h2></div>
-                    <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
-                        @csrf
-                        <input type="submit" class="btn btn-outline-primary btn-sm " value="Edit">
-                    </form>
+                    <div class="col-md-6">
+                    <h2>{{$profileDetails->username}}</h2>
+                    <p>{{$profileDetails->first_name}}</p>
+                    <p>{{$profileDetails->bio}}</p>
+                    </div>
 
-                     </div>
+
+                    <!-- To Do ask DataById -->
+                    <div id="user_id" data-id="{{$profileDetails->id}}"></div>
+                    
+                    </div>
+
+
+                    <!-- To Do ask conditional components -->
+                    @if (!Auth::guest())
+                        @if (Auth::user()->id == $profileDetails->id ) 
+                        <div class="card-header" style="display:flex;">
+                            <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="* Edit Profile">
+                            </form>
+
+                            <a href="../new-product"><button class="btn btn-primary" style="margin-left:20px;" >+ Nuevo producto </button></a>
+                            
+                        </div>    
+                        @endif
+                    @endif
 
                 </div>
                 <div class="card" style="margin-top:30px;">
@@ -40,6 +63,9 @@
         </div>
     </div>
 </div>
+
+
+<!-- To Do ask Using fetch and API -->
 <script>
         fetch("http://127.0.0.1:8000/product").then(value=>value.json()).then( value=>{
     let container = document.querySelector("#product");

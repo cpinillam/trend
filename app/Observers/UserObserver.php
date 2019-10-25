@@ -19,7 +19,9 @@ class UserObserver
             'user_id' => $user->id,
             'username' => $user->username,
             ]);
-
+        
+            //To Do Element to TEST TDD
+            //return true;
     }
 
     /**
