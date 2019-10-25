@@ -28,14 +28,7 @@ class ProfileController extends Controller
     public function create(array $data)
     {
         
-        /* 
-        $profile = Profile::create([
-
-            'name' => request('name'),
-            'user_id' => auth()->id()
-
-           
-        ]); */
+        /* --------------- To Do Ask diference Between create and store ---------- */
        
     }
 
@@ -59,7 +52,6 @@ class ProfileController extends Controller
     public function show(Profile $profile)
     {
         $profileDetails = $profile;
-        //dd($profileDetails);
         return view('profileDetail',['profileDetails' => $profileDetails]);
     }
 
@@ -71,7 +63,7 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-        //$profileToEdit = $profile;
+       
         return view('editProfile',['profile' => $profile]);
     }
 
@@ -99,6 +91,7 @@ class ProfileController extends Controller
         //
     }
 
+    // To Do ask 
     public function getProductsByUser($user)
     {
         $products=Products::all();

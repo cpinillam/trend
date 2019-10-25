@@ -6,8 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard
-                    <a style="float:right;" href="../new-product"><button class="btn btn-primary" >+ Nuevo producto </button></a>
-
+                 
                 </div>
 
                 <div class="card-body" style="display:flex;">
@@ -17,29 +16,57 @@
                         </div>
                     @endif
 
-                      <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; height:200px;background-color:black;"  alt="">  
-                        <div style="padding:15px;">
-                    <h6>UserName: {{$profileDetails->username}}</h6>
-                    <h6>Firstname: {{$profileDetails->first_name}}</h6>
-                    <h6>Last Name: {{$profileDetails->last_name}}</h6>
-                    <h6>Bio: {{$profileDetails->bio}}</h6>
-                    <h6>Address: {{$profileDetails->address}}</h6>
-                    <h6>Postak code: {{$profileDetails->post_code}}</h6>
+                      
 
-                    <h2>Follow me at:</h2>
-                    <h6>Facebook: <a href="{{$profileDetails->facebook}}">{{$profileDetails->facebook}}</a></h6>
-                    <h6>Instagram: <a href="{{$profileDetails->instagram}}">{{$profileDetails->instagram}}</a></h6>
-                    <h6>Youtube: <a href="{{$profileDetails->youtube}}">{{$profileDetails->youtube}}</a></h6>
-                    <h6>Twitch: <a href="{{$profileDetails->twitch}}">{{$profileDetails->twitch}}</a></h6>
-
-                    <div id="user_id" data-id="{{$profileDetails->id}}">
+                    <div class="col-md-6">
+                            <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
+                          <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                        </div>
                     </div>
-                    <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
-                        @csrf
-                        <input type="submit" class="btn btn-outline-primary btn-sm " value="Edit">
-                    </form>
-                </div> 
-                     </div>
+                        
+                        
+
+                    <div class="col-md-6">
+                        <h2>{{$profileDetails->username}}</h2>
+                        <p>{{$profileDetails->first_name}}</p>
+                        <p>{{$profileDetails->bio}}</p>
+
+                        
+                        <p>Firstname: {{$profileDetails->first_name}}</p>
+                        
+                        
+                        <p>{{$profileDetails->address}}</p>
+                        <p>Postal code: {{$profileDetails->post_code}}</p>
+
+                        <h2>Follow me at:</h2>
+                        <h6>Facebook: <a href="{{$profileDetails->facebook}}">{{$profileDetails->facebook}}</a></h6>
+                        <h6>Instagram: <a href="{{$profileDetails->instagram}}">{{$profileDetails->instagram}}</a></h6>
+                        <h6>Youtube: <a href="{{$profileDetails->youtube}}">{{$profileDetails->youtube}}</a></h6>
+                        <h6>Twitch: <a href="{{$profileDetails->twitch}}">{{$profileDetails->twitch}}</a></h6>
+
+                    </div>
+
+
+                    <!-- To Do ask DataById -->
+                    <div id="user_id" data-id="{{$profileDetails->id}}"></div>
+                    
+                </div>
+
+
+                    <!-- To Do ask conditional components -->
+                    @if (!Auth::guest())
+                        @if (Auth::user()->id == $profileDetails->id ) 
+                        <div class="card-header" style="display:flex;">
+                            <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="* Edit Profile">
+                            </form>
+
+                            <a href="../new-product"><button class="btn btn-primary" style="margin-left:20px;" >+ Nuevo producto </button></a>
+                            
+                        </div>    
+                        @endif
+                    @endif
 
                 </div>
                 <div class="card" style="margin-top:30px;">
@@ -53,8 +80,15 @@
         </div>
     </div>
 </div>
+
+
+<!-- To Do ask Using fetch and API -->
 <script>
+<<<<<<< HEAD
     fetch("http://localhost:8000/product").then(value=>value.json()).then( value=>{
+=======
+        fetch("http://127.0.0.1:8000/product").then(value=>value.json()).then( value=>{
+>>>>>>> 0f863689a3a85f16e4260b15a319a24ab5e986c9
     let container = document.querySelector("#product");
     let user_id = document.getElementById('user_id').getAttribute("data-id");
                  
