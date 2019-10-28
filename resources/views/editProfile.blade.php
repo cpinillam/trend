@@ -7,10 +7,12 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
-                <form action="/profile/{{$profile->id}}" method="post">
+                <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data">
                 
                     @csrf
                     @method('PUT')
+                    <label class="col-md-6" for="profile_image">Your Better Img</label>
+                    <input id="file-input" name="profile_image" type="file"/>
                     <label class="col-md-6" for="first_name">FirstName</label>
                     <input class="col-md-6" type="text" name="first_name" value={{$profile->first_name}}>
                     <label class="col-md-6" for="last_name">last_name</label>

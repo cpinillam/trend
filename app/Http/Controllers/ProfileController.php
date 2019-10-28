@@ -6,6 +6,7 @@ use App\Profile;
 use App\User;
 use App\Products;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -76,7 +77,21 @@ class ProfileController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
+        dd($request);
         $profile->update($request->all());
+        $this->validate($request, ['profile_image'=>'required|image']);
+
+        // $user=$profile->user_id;
+        $extension=$request->file('profile_image')->getUserOriginalExtension();
+        $file_name=$profile->user_id.'.'.$extension;
+
+        Image::make($request->file('profile_image'))
+        ->resize(144,144)
+        ->save('profiles/'.$profile->user_id.'/portrait_img/'.$file_name);
+
+        $profile->profile_image=$extension;
+        $profile->save();
+
         return redirect("profile/$profile->user_id");
     }
 

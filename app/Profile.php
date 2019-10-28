@@ -24,6 +24,7 @@ class Profile extends Model
          'bio',
          'address',
          'post_code',
+         'profile_image',
          'facebook',
          'instagram',
          'youtube',
