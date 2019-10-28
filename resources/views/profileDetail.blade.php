@@ -20,7 +20,7 @@
 
                     <div class="col-md-6">
                             <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
-                          <img src="../photos/profiles/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                          <img src="../photos/profiles/{{$profileDetails->id}}/portrait_img/{{$profileDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
                         </div>
                     </div>
                         

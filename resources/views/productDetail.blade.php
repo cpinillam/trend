@@ -15,7 +15,7 @@
                     @endif
                     <div class="col-md-6">
                         <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
-                      <img src="../photos/products/{{$productDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                      <img src="../photos/profiles/{{$productDetails->user_id}}/products/{{$productDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
                     </div>
                     </div>
 

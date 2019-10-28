@@ -5,17 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Profiles</div>
+                <div class="card-header col-12">Profiles</div>
+            </div>
+            <div class="row">
                 @foreach ($profiles as $profile)
-                    <div style="margin:10px; float:left;">
-                        
-                    <form action="{{route('profile.show',$profile->id)}}" method="get">
-                            @csrf
-                            <input type="submit" value="{{$profile->username}}" class="btn btn-success" style="width:150px; height: 150px;">
-                    </form>
+                    <div class="profile-container col-4" style="position: relative; padding:15px;">
+                        <form action="{{route('profile.show',$profile->id)}}" method="get" style="position: relative; height:130px;">
+                                @csrf
+                                <img class="img-profile" src="/photos/profiles/{{$profile->id}}/portrait_img/{{$profile->id}}.jpg">
+                                <input type="submit" value="{{$profile->username}}" class="btn" style="">
+                             </form>
                     </div>
                 @endforeach
-            
             </div>
         </div>
     </div>
