@@ -1,4 +1,47 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito); @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+.filter-p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #fff;
+  opacity: 0;
+  z-index: 3;
+}
+
+.profile-container input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 1s;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.profile-container .img-profile {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+.profile-container form {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.profile-container:hover input {
+  transition: all 0.5s;
+  background: rgba(255, 255, 255, 0);
+  color: transparent;
+}
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
