@@ -82,10 +82,15 @@ class ProfileController extends Controller
         $profile->update($request->all());
         $user=$profile->user_id;
         if($request->hasFile('profile_image')){
+            
             $extension=$request->file('profile_image')->getClientOriginalExtension();
-            $file=$request->file('profile_image');
-            $file_name=$profile->user_id.'.'.$extension;
-            $file->move(public_path()."/images/profiles/$profile->user_id/portrait_img",$file_name);
+            
+             $file=$request->file('profile_image');
+             $file_name=$profile->user_id.'.'.$extension;
+            $img = Image::make("$file_name");
+
+            $img->save("public/images/profiles/$profile->user_id/portrait_img/$file_name");
+        
         }
 
         
