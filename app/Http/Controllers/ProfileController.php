@@ -54,7 +54,7 @@ class ProfileController extends Controller
     {
         $profileDetails = $profile;
         return view('profileDetail',['profileDetails' => $profileDetails]);
-        //return(['profileDetails' => $profileDetails]);
+        
     }
 
     /**
