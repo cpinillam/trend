@@ -20,13 +20,19 @@
 
                     <div class="col-md-6">
                             <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
-                         
-                          <img src="{{$profileDetails->profile_image}}" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                           
+                                
+                             
+                                <img src="{{asset($profile_Image)}}" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                                
+                                
+                          
+                        
                         </div>
+                
                     </div>
                         
-                        
-
+             
                     <div class="col-md-6">
                         <h2>{{$profileDetails->username}}</h2>
                         <p>{{$profileDetails->first_name}}</p>

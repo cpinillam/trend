@@ -15,7 +15,7 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Profile $profile)
     {
         $profiles=Profile::all();
         return view('content',['profiles' => $profiles]);
@@ -52,8 +52,13 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        $profileDetails = $profile;
-        return view('profileDetail',['profileDetails' => $profileDetails]);
+        
+        $user_id = $profile->user_id;
+        
+        $profileImage = new Profile;
+        $currentImage=$profileImage->getProfileImage($user_id);
+        
+        return view('profileDetail',['profileDetails' => $profile, 'profile_Image' => $currentImage]);
         
     }
 
@@ -79,20 +84,11 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile)
     {
         
-        $profile->update($request->all());
-        $user=$profile->user_id;
-        if($request->hasFile('profile_image')){
-            
-            $extension=$request->file('profile_image')->getClientOriginalExtension();
-            
-             $file=$request->file('profile_image');
-             $file_name=$profile->user_id.'.'.$extension;
-            $img = Image::make("$file_name");
-
-            $img->save("public/images/profiles/$profile->user_id/portrait_img/$file_name");
+        $profile->upDateProfileImage($request);
         
-        }
+                   
 
+        $profile->update($request->all());
         
 
         return redirect("profile/$profile->user_id");
