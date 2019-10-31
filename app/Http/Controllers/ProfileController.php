@@ -56,8 +56,8 @@ class ProfileController extends Controller
     {
         
         $currentImage=$profile->getProfileImage();
-        
-        return view('profileDetail',['profileDetails' => $profile, 'profile_Image' => $currentImage]);
+        $products = $profile->user->products;
+        return view('profileDetail',['profileDetails' => $profile, 'profile_Image' => $currentImage,'userProducts' => $products]);
         
     }
 
