@@ -17,8 +17,10 @@ class ProfileController extends Controller
      */
     public function index(Profile $profile)
     {
+
         $profiles=Profile::all();
-        return view('content',['profiles' => $profiles]);
+        $currentImage=$profile->getProfileImageForIndex($profiles);
+        return view('content',['profiles' => $profiles, 'profile_Image' => $currentImage]);
     }
 
     /**
@@ -53,10 +55,7 @@ class ProfileController extends Controller
     public function show(Profile $profile)
     {
         
-        $user_id = $profile->user_id;
-        
-        $profileImage = new Profile;
-        $currentImage=$profileImage->getProfileImage($user_id);
+        $currentImage=$profile->getProfileImage();
         
         return view('profileDetail',['profileDetails' => $profile, 'profile_Image' => $currentImage]);
         

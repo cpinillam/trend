@@ -40,9 +40,10 @@ class Profile extends Model
         if($data->hasFile('profile_image'))
         {
             $file=$data->file('profile_image');
-            $extension=$data->file('profile_image')->getClientOriginalExtension();
+            $extension=$file->getClientOriginalExtension();
             $file_name=$this->user_id.'.'.$extension;
-            $file->storeAs("$this->user_id/profile_images",$file_name);    
+            $file->storeAs("$this->user_id/profile_images",$file_name);  
+              
             
             return "Image Uploaded";
             
@@ -50,18 +51,30 @@ class Profile extends Model
 
     }
 
-    public function getProfileImage($user_id)
-    {
-        
-        $path="$user_id/profile_images/";
+    public function getProfileImage()
+    {        
+        $path="$this->user_id/profile_images/";
         $result=Storage::files($path);
-        // $test=storage_path($path);
-        //dd(empty($result));
-
         if(empty($result)){
-            return "storage/default/default.jpg";
+            return "storage/default/default.svg";
         }
         return "storage/".$result[0];
+    }
 
+    public function getProfileImageForIndex($profiles)
+    {
+        $indexProfilesImages = array();
+        foreach ($profiles as $index => $profile) {
+            $path="$profile->user_id/profile_images/"; 
+            $result=Storage::files($path);
+
+            if(empty($result)){
+                array_push($indexProfilesImages, 'storage/default/default.svg');
+            }
+            if(!empty($result)){
+                array_push($indexProfilesImages, 'storage/'.$result[0]);
+            } 
+        } 
+        return $indexProfilesImages; 
     }
 }
