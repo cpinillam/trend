@@ -79,8 +79,12 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-
-        return view('editProfile', ['profile' => $profile]);
+            if($this->authorize('edit',$profile)){
+                return view('editProfile', ['profile' => $profile]);
+            }
+            return view('content');
+    
+     
     }
 
     /**

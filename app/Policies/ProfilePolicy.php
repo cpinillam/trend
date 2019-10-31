@@ -24,4 +24,9 @@ class ProfilePolicy
     {
         return $user->id === $profile->user_id;
     }
+    
+    public function edit(User $user, Profile $profile):bool
+    {
+        return $user->id === $profile->user_id;
+    }
 }
