@@ -15,10 +15,12 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Profile $profile)
     {
+
         $profiles=Profile::all();
-        return view('content',['profiles' => $profiles]);
+        $currentImage=$profile->getProfileImageForIndex($profiles);
+        return view('content',['profiles' => $profiles, 'profile_Image' => $currentImage]);
     }
 
     /**
@@ -41,7 +43,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        
     }
 
     /**
@@ -52,8 +54,11 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        $profileDetails = $profile;
-        return view('profileDetail',['profileDetails' => $profileDetails]);
+        
+        $currentImage=$profile->getProfileImage();
+        $products = $profile->user->products;
+        return view('profileDetail',['profileDetails' => $profile, 'profile_Image' => $currentImage,'userProducts' => $products]);
+        
     }
 
     /**
@@ -77,20 +82,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
-        dd($request);
+        
+        $profile->upDateProfileImage($request);
+        
+                   
+
         $profile->update($request->all());
-        $this->validate($request, ['profile_image'=>'required|image']);
-
-        // $user=$profile->user_id;
-        $extension=$request->file('profile_image')->getUserOriginalExtension();
-        $file_name=$profile->user_id.'.'.$extension;
-
-        Image::make($request->file('profile_image'))
-        ->resize(144,144)
-        ->save('profiles/'.$profile->user_id.'/portrait_img/'.$file_name);
-
-        $profile->profile_image=$extension;
-        $profile->save();
+        
 
         return redirect("profile/$profile->user_id");
     }
