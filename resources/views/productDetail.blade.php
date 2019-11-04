@@ -32,6 +32,7 @@
                 </div>
                 <div class="card" style="margin-top:30px;">
                 <div class="card-header">Comentarios</div>
+               <a href="{{$productDetails->id}}/edit"> <button class="btn btn-primary btn-sm"> editar producto</button></a>
                 <div name="product" id="product" class="card-body" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
                   
 
