@@ -2,7 +2,7 @@
 
 
 
-Route::get('/', 'ProfileController@index');
+Route::get('/', 'SiteController@index');
 
 Auth::routes();
 
