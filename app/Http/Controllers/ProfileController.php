@@ -57,9 +57,7 @@ class ProfileController extends Controller
         $products = $profile->user->products;
         return view('profileDetail', ['profileDetails' => $profile, 
         'profile_Image' => $currentImage, 'userProducts' => $products]);
-        
-       
-
+    
     }
 
 

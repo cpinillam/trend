@@ -66,9 +66,8 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        $productDetail = $product;
-        //
-        return view('productDetail', ['productDetails' => $productDetail]);
+       
+        return view('productDetail', ['productDetails' => $product]);
 
     }
 
@@ -78,9 +77,10 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $products)
+    public function edit(Products $product)
     {
-        //
+    
+        return view('products/products-edit-form', ['product' => $product]);
     }
 
     /**
@@ -90,9 +90,13 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, Products $product)
     {
-        //
+        
+        $product->update($request->all());
+
+   
+        return redirect("product/$product->id");
     }
 
     /**
