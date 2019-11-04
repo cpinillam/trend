@@ -15,7 +15,6 @@ class SiteController extends Controller
         $profiles = Profile::all();
         $currentImage = $profile->getProfileImageForIndex($profiles);
         $exclusive_products = Products::all();
-        dd($exclusive_products);
         return view('content', ['profiles' => $profiles, 'profile_Image' => $currentImage , 'exclusive_products' => $exclusive_products]);
         
     }
