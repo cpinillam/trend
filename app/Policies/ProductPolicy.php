@@ -3,11 +3,10 @@
 namespace App\Policies;
 
 use App\User;
-use App\Profile;
-
+use App\Products;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ProfilePolicy
+class ProductPolicy
 {
     use HandlesAuthorization;
 
@@ -20,14 +19,9 @@ class ProfilePolicy
     {
         //
     }
-    
-    
-    
-    public function edit(User $user, Profile $profile):bool
+
+    public function editProduct(User $user, Products $products):bool
     {
-        return $user->id === $profile->user_id;
+        return $user->id === $products->user_id;
     }
-
-   
-
 }
