@@ -18,9 +18,9 @@ class ProfileController extends Controller
     public function index(Profile $profile)
     {
 
-        $profiles=Profile::all();
-        $currentImage=$profile->getProfileImageForIndex($profiles);
-        return view('content',['profiles' => $profiles, 'profile_Image' => $currentImage]);
+        $profiles = Profile::all();
+        $currentImage = $profile->getProfileImageForIndex($profiles);
+        return view('content', ['profiles' => $profiles, 'profile_Image' => $currentImage]);
     }
 
     /**
@@ -30,10 +30,8 @@ class ProfileController extends Controller
      */
     public function create(array $data)
     {
-        
-        /* --------------- To Do Ask diference Between create and store ---------- */
-       
-    }
+
+        /* --------------- To Do Ask diference Between create and store ---------- */ }
 
     /**
      * Store a newly created resource in storage.
@@ -55,12 +53,24 @@ class ProfileController extends Controller
     public function show(Profile $profile)
     {
         
-        $currentImage=$profile->getProfileImage();
+        $currentImage = $profile->getProfileImage();
         $products = $profile->user->products;
-        return view('profileDetail',['profileDetails' => $profile, 'profile_Image' => $currentImage,'userProducts' => $products]);
+        return view('profileDetail', ['profileDetails' => $profile, 
+        'profile_Image' => $currentImage, 'userProducts' => $products]);
         
+       
+
     }
 
+
+    public function showButtons (Profile $profile)
+    {
+        if ($this->authorize('showButtons', $profile)) {
+           
+            return view('profileDetail', ['profileDetails' => $profile]);
+        }
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,8 +79,12 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-       
-        return view('editProfile',['profile' => $profile]);
+            if($this->authorize('edit',$profile)){
+                return view('editProfile', ['profile' => $profile]);
+            }
+            return view('content');
+    
+     
     }
 
     /**
@@ -82,13 +96,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
-        
+
         $profile->upDateProfileImage($request);
-        
-                   
+
+
 
         $profile->update($request->all());
-        
+
 
         return redirect("profile/$profile->user_id");
     }
@@ -107,7 +121,7 @@ class ProfileController extends Controller
     // To Do ask 
     public function getProductsByUser($user)
     {
-        $products=Products::all();
-        return view("profile/$user",['products' => $products]);
+        $products = Products::all();
+        return view("profile/$user", ['products' => $products]);
     }
 }

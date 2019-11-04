@@ -61,7 +61,7 @@
 
 
                     <!-- To Do ask conditional components -->
-                    @if (!Auth::guest())
+                 {{--    @if (!Auth::guest())
                         @if (Auth::user()->id == $profileDetails->id ) 
                         <div class="card-header" style="display:flex;">
                             <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
@@ -74,7 +74,18 @@
                         </div>    
                         @endif
                     @endif
+ --}}
 
+                    @can('showButtons',$profileDetails)
+                    <div class="card-header" style="display:flex;">
+                        <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
+                        @csrf
+                        <input type="submit" class="btn btn-danger" value="* Edit Profile">
+                        </form>
+
+                        <a href="../new-product"><button class="btn btn-primary" style="margin-left:20px;" >+ Nuevo producto </button></a>
+                    </div>   
+                    @endCan
                 </div>
                 <div class="card" style="margin-top:30px;">
                 <div class="card-header">:::: PRODUCTOS ::::</div>
