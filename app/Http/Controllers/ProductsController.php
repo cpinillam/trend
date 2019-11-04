@@ -68,6 +68,7 @@ class ProductsController extends Controller
        
         return view('productDetail', ['productDetails' => $product]);
 
+
     }
 
     /**
@@ -78,8 +79,13 @@ class ProductsController extends Controller
      */
     public function edit(Products $product)
     {
-    
-        return view('products/products-edit-form', ['product' => $product]);
+        if($this->authorize('editProduct',$product)){
+            return view('products/products-edit-form', ['product' => $product]);
+        }
+        return view('content');
+
+
+        
     }
 
     /**

@@ -48,30 +48,15 @@
                     </div>
 
 
-                    <!-- To Do ask DataById -->
+            
                     <div id="user_id" data-id="{{$profileDetails->id}}"></div>
                     
                 </div>
 
 
-                    <!-- To Do ask conditional components -->
-                {{--    @if (!Auth::guest())
-                            @if (Auth::user()->id == $profileDetails->id ) 
-                            <div class="card-header" style="display:flex;">
-                                
-                                <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
-                                @csrf
-                                <input type="submit" class="btn btn-danger" value="* Edit Profile">
-                                </form>
+                 
 
-                                <a href="../new-product"><button class="btn btn-primary" style="margin-left:20px;" >+ Nuevo producto </button></a>
-                                
-                            </div>    
-                            @endif
-                        @endif
-                --}}
-
-                    @can('showButtons',$profileDetails)
+                    @can('edit',$profileDetails)
                     <div class="card-header" style="display:flex;">
                         <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
                         @csrf
