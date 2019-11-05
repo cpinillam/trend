@@ -20,7 +20,7 @@ class ProductPolicy
         //
     }
 
-    public function editProduct(User $user, Products $products):bool
+    public function edit(User $user, Products $products):bool
     {
         return $user->id === $products->user_id;
     }

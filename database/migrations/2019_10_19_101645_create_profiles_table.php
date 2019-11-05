@@ -22,7 +22,6 @@ class CreateProfilesTable extends Migration
             $table->string('first_name',100)->nullable();
             $table->string('last_name',100)->nullable();
             $table->text('bio',100)->nullable();
-           
             $table->string('address', 150)->nullable();
             $table->string('post_code', 150)->nullable();
             $table->string('facebook', 150)->nullable();

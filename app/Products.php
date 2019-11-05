@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Support\Collection;
 
 class Products extends Model
 {
@@ -11,19 +12,26 @@ class Products extends Model
         return $this->hasOne('App\User');
     }
 
-    //To Do Ask best way to transfer date, DB "acoplamentation"
-    public function getProductsById($user_id){
-        $sql=DB::table('products')
-                ->select(DB::raw('*'))
-                ->where('user_id','=',$user_id)
-                ->get();
+    public function Puntuation(){
+        return $this->hasOne('App\Puntuation');
+    }
+    
+    public function getFeaturedProducts(){
 
-        return $sql;
+       $featuredProducts = Products::all()->sortByDesc('points')->take('6'); 
+       return $featuredProducts;
+
+    //To Do Ask Correct Use
+       /* $products = collect(Products::all());
+       $featuredProducts = $products->sortByDesc('points')->take('6'); 
+    */
     }
 
-
+    public function addPoints($id_product){
+        $id_product->update();
+    }
 
     protected $fillable = [
-        'user_id','name','description', 'initial_price'
+        'user_id','name','description', 'initial_price', 'points'
     ];
 }

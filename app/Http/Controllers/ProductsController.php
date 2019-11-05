@@ -65,7 +65,8 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-       
+        //TO DO Middelware
+        Products::where('id', $product->id)->update(['points' => ($product->points)+1]);
         return view('productDetail', ['productDetails' => $product]);
 
 
@@ -79,7 +80,7 @@ class ProductsController extends Controller
      */
     public function edit(Products $product)
     {
-        if($this->authorize('editProduct',$product)){
+        if($this->authorize('edit',$product)){
             return view('products/products-edit-form', ['product' => $product]);
         }
         return view('content');
@@ -97,10 +98,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Products $product)
     {
-        
         $product->update($request->all());
-
-   
         return redirect("product/$product->id");
     }
 
