@@ -42,7 +42,7 @@ class Profile extends Model
             $file=$data->file('profile_image');
             $extension=$file->getClientOriginalExtension();
             $file_name=$this->user_id.'.'.$extension;
-            $file->storeAs("$this->user_id/profile_images",$file_name);  
+            $file->storeAs("users/$this->user_id/profile_images",$file_name);  
               
             
             return "Image Uploaded";
@@ -53,7 +53,7 @@ class Profile extends Model
 
     public function getProfileImage()
     {        
-        $path="$this->user_id/profile_images/";
+        $path="users/$this->user_id/profile_images/";
         $result=Storage::files($path);
         if(empty($result)){
             return "storage/default/default.svg";
@@ -65,9 +65,8 @@ class Profile extends Model
     {
         $indexProfilesImages = array();
         foreach ($profiles as $index => $profile) {
-            $path="$profile->user_id/profile_images/"; 
+            $path="users/$profile->user_id/profile_images/"; 
             $result=Storage::files($path);
-
             if(empty($result)){
                 array_push($indexProfilesImages, 'storage/default/default.svg');
             }
