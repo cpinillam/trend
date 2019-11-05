@@ -18,9 +18,7 @@ class ProfileController extends Controller
     public function index(Profile $profile)
     {
 
-        $profiles = Profile::all();
-        $currentImage = $profile->getProfileImageForIndex($profiles);
-        return view('content', ['profiles' => $profiles, 'profile_Image' => $currentImage]);
+        
     }
 
     /**
@@ -57,9 +55,7 @@ class ProfileController extends Controller
         $products = $profile->user->products;
         return view('profileDetail', ['profileDetails' => $profile, 
         'profile_Image' => $currentImage, 'userProducts' => $products]);
-        
-       
-
+    
     }
 
 
@@ -98,12 +94,9 @@ class ProfileController extends Controller
     {
 
         $profile->upDateProfileImage($request);
-
-
-
+        
         $profile->update($request->all());
-
-
+        
         return redirect("profile/$profile->user_id");
     }
 
@@ -124,4 +117,7 @@ class ProfileController extends Controller
         $products = Products::all();
         return view("profile/$user", ['products' => $products]);
     }
+        
+
+        
 }

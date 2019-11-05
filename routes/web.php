@@ -2,14 +2,15 @@
 
 
 
-Route::get('/', 'ProfileController@index');
+Route::get('/', 'SiteController@index');
 
 Auth::routes();
 
 Route::resource('/profile','ProfileController');
-//Route::get('/profile/{profile}','ProfileController@showButtons');
+
 
 Route::resource('/product','ProductsController');
+//Route::get('/product/{product}/')->middleware('auth');
 
 // Proteccion de rutas
 

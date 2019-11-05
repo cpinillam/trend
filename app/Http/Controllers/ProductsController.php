@@ -14,8 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products=Products::all();
-        return json_encode($products);
+       
     }
 
     /**
@@ -66,9 +65,10 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        $productDetail = $product;
-        //
-        return view('productDetail', ['productDetails' => $productDetail]);
+        //TO DO Middelware
+        Products::where('id', $product->id)->update(['points' => ($product->points)+1]);
+        return view('productDetail', ['productDetails' => $product]);
+
 
     }
 
@@ -78,9 +78,15 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $products)
+    public function edit(Products $product)
     {
-        //
+        if($this->authorize('edit',$product)){
+            return view('products/products-edit-form', ['product' => $product]);
+        }
+        return view('content');
+
+
+        
     }
 
     /**
@@ -90,9 +96,10 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, Products $product)
     {
-        //
+        $product->update($request->all());
+        return redirect("product/$product->id");
     }
 
     /**
