@@ -10,7 +10,8 @@ Route::resource('/profile','ProfileController');
 
 
 Route::resource('/product','ProductsController');
-//Route::get('/product/{product}/')->middleware('auth');
+
+//Route::get('/product/{product}/', 'ProductsController@show')->middleware('points', '{product}');
 
 // Proteccion de rutas
 

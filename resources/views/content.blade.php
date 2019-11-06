@@ -36,7 +36,7 @@
                 @foreach ($exclusive_products as $exclusive_product)
                 
                     <div class="profile-container col-4" style="position: relative; padding:15px;">
-                        <form action="{{route('product.show',$exclusive_product->id)}}" method="get" style="position: relative; height:130px;">
+                        <form action="product/{{$exclusive_product->id}}" method="get" style="position: relative; height:130px;">
                                 @csrf
 
                                 <!-- <img class="img-profile" src="{{asset($profile_Image[$index])}}">   -->

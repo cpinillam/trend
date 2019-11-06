@@ -3,11 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Products;
 
-class Points
+class test
 {
-
     /**
      * Handle an incoming request.
      *
@@ -16,13 +14,7 @@ class Points
      * @return mixed
      */
     public function handle($request, Closure $next)
-
     {
-        $product = new Products();
-        $product->primaryKey;
-        dd($request);
-
-        //Products::where('id', $product->id)->update(['points' => ($product->points)+1]);
         return $next($request);
     }
 }
