@@ -3,10 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
+
 
 class Products extends Model
 {
+
     public function User(){
 
         return $this->hasOne('App\User');
@@ -15,15 +17,15 @@ class Products extends Model
     public function Puntuation(){
         return $this->hasOne('App\Puntuation');
     }
-    
+
     public function getFeaturedProducts(){
 
-       $featuredProducts = Products::all()->sortByDesc('points')->take('6'); 
+       $featuredProducts = Products::all()->sortByDesc('points')->take('6');
        return $featuredProducts;
 
     //To Do Ask Correct Use
        /* $products = collect(Products::all());
-       $featuredProducts = $products->sortByDesc('points')->take('6'); 
+       $featuredProducts = $products->sortByDesc('points')->take('6');
     */
     }
 
@@ -36,36 +38,42 @@ class Products extends Model
     ];
 
 
-/* ***************************************** */
 
-    public function upDateProfileImage($data)
+
+    public function upDateProductsImages($data)
     {
-   
-        
-         if($data->hasFile('file'))
+
+
+         if($data->hasFile('fileImage'))
          {
-             $file=$data->file('file');
+             $file=$data->file('fileImage');
+
              $extension=$file->getClientOriginalExtension();
-             $file_name=$this->user_id.'.'.$extension;
-             $file->storeAs("users/$this->user_id/profile_images",$file_name);  
-               
-             
+
+             $date=$file->getCTime();
+             $file_name=$this->id.'-'.$date.'.'.$extension;
+             $file->storeAs("products/$this->id",$file_name);
+
+
              return "Image Uploaded";
-             
+
          }
- 
+
      }
- 
-     public function getProfileImage()
-     {        
-         $path="users/$this->user_id/profile_images/";
+
+     public function getProductsImages()
+     {
+         $path="products/$this->id/";
          $result=Storage::files($path);
          if(empty($result)){
-             return "storage/default/default.svg";
+             $empty = ['/default/default.svg'];
+             return $empty;
          }
-         return "storage/".$result[0];
+
+
+         return $result;
      }
 
-/* ***************************************** */
+
 
 }

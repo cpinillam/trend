@@ -14,9 +14,15 @@
                         </div>
                     @endif
                     <div class="col-md-6">
-                        <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
-                      <img src="../photos/profiles/{{$productDetails->user_id}}/products/{{$productDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
-                    </div>
+                        
+                        @foreach ($productImages as $productImage )
+                      
+                        <div style="width:300px; height: 300px; background-color:grey;">
+                        <img src="../storage/{{$productImage}}" style="width:100%; heigth:auto; background-color:black;"  alt=".">  
+                       
+                        </div>
+                        @endforeach
+                        
                     </div>
 
                     <div class="col-md-6">
