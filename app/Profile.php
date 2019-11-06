@@ -37,9 +37,9 @@ class Profile extends Model
    {
   
        
-        if($data->hasFile('profile_image'))
+        if($data->hasFile('file'))
         {
-            $file=$data->file('profile_image');
+            $file=$data->file('file');
             $extension=$file->getClientOriginalExtension();
             $file_name=$this->user_id.'.'.$extension;
             $file->storeAs("users/$this->user_id/profile_images",$file_name);  
