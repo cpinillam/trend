@@ -96,7 +96,7 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $product)
+    public function update(Request $request, Products $product) 
     {
         $product->update($request->all());
         return redirect("product/$product->id");
