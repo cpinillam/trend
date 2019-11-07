@@ -9,7 +9,8 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
-                <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data">
+                <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data" class="dropzone"
+                    id="my-awesome-dropzone">
                
 
 

@@ -53,10 +53,20 @@ class ProfileController extends Controller
         
         $currentImage = $profile->getProfileImage();
         $products = $profile->user->products;
-        return view('profileDetail', ['profileDetails' => $profile, 'profile_Image' => $currentImage, 'userProducts' => $products]);
+        return view('profileDetail', ['profileDetails' => $profile, 
+        'profile_Image' => $currentImage, 'userProducts' => $products]);
     
     }
 
+
+    public function showButtons (Profile $profile)
+    {
+        if ($this->authorize('showButtons', $profile)) {
+           
+            return view('profileDetail', ['profileDetails' => $profile]);
+        }
+
+    }
     /**
      * Show the form for editing the specified resource.
      *

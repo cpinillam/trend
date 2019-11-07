@@ -10,3 +10,4 @@ class Puntuation extends Model
         return $this->belongsTo('App\Products');
     }
 }
+  

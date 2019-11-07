@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Products;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
-
-
-
 
 class ProductsController extends Controller
 {
@@ -69,10 +65,9 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-       
-        $productImages = $product->getProductsImages();
-        
-        return view('productDetail', ['productDetails' => $product, 'productImages' => $productImages]);
+        //TO DO Middelware
+        Products::where('id', $product->id)->update(['points' => ($product->points)+1]);
+        return view('productDetail', ['productDetails' => $product]);
 
 
     }
@@ -101,9 +96,8 @@ class ProductsController extends Controller
      * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $product)
+    public function update(Request $request, Products $product) 
     {
-        $product->upDateProductsImages($request);
         $product->update($request->all());
         return redirect("product/$product->id");
     }

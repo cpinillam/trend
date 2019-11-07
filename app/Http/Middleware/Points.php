@@ -7,7 +7,6 @@ use App\Products;
 
 class Points
 {
-
     /**
      * Handle an incoming request.
      *
@@ -15,14 +14,8 @@ class Points
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-
+    public function addPoints($request)
     {
-        $product = new Products();
-        $product->primaryKey;
-        dd($request);
-
-        //Products::where('id', $product->id)->update(['points' => ($product->points)+1]);
-        return $next($request);
+     //
     }
 }
