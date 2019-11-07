@@ -3,10 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
+
 
 class Products extends Model
 {
+
     public function User(){
 
         return $this->hasOne('App\User');
@@ -36,18 +38,21 @@ class Products extends Model
     ];
 
 
-/* ***************************************** */
 
-    public function upDateProductImages($data)
+
+    public function upDateProductsImages($data)
     {
 
 
-         if($data->hasFile('file'))
+         if($data->hasFile('fileImage'))
          {
-             $file=$data->file('file');
+             $file=$data->file('fileImage');
+
              $extension=$file->getClientOriginalExtension();
-             $file_name=$this->user_id.'.'.$extension;
-             $file->storeAs("users/$this->user_id/product_images",$file_name);
+
+             $date=$file->getCTime();
+             $file_name=$this->id.'-'.$date.'.'.$extension;
+             $file->storeAs("users/products/$this->id",$file_name);
 
 
              return "Image Uploaded";
@@ -56,16 +61,19 @@ class Products extends Model
 
      }
 
-     public function getProfileImage()
+     public function getProductsImages()
      {
-         $path="users/$this->user_id/profile_images/";
+         $path="users/products/$this->id/";
          $result=Storage::files($path);
          if(empty($result)){
-             return "storage/default/default.svg";
+             $empty = ['/default/default.svg'];
+             return $empty;
          }
-         return "storage/".$result[0];
+
+
+         return $result;
      }
 
-/* ***************************************** */
+
 
 }
