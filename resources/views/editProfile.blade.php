@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,11 +10,14 @@
                 <div class="card-header">Dashboard</div>
 
                 <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data">
-                
+               
+
+
+
                     @csrf
                     @method('PUT')
-                    <label class="col-md-6" for="profile_image">Your Better Img</label>
-                    <input id="file-input" name="profile_image" type="file"/>
+                    <label class="col-md-6" for="file">Your Better Img</label>
+                    <input id="file-input" name="file" type="file"/>
                     <label class="col-md-6" for="first_name">FirstName</label>
                     <input class="col-md-6" type="text" name="first_name" value={{$profile->first_name}}>
                     <label class="col-md-6" for="last_name">last_name</label>
@@ -37,4 +42,5 @@
         </div>
     </div>
 </div>
+
 @endsection

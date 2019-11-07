@@ -8,15 +8,16 @@
                 <div class="card-header">EDIT Product</div>
 
                 <div class="card-body">
-                    
                     <form method="POST" action="/product/{{$product->id}}" enctype="multipart/form-data">
-                        @csrf
 
+                        @csrf
                         @method('PUT')
 
 
 
                         <div class="form-group row">
+                                <label class="col-md-6" for="file">Your Better Img</label>
+                                <input id="file-input" name="file" type="file" multiple>
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Product Name') }}</label>
 
                             <div class="col-md-6">

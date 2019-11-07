@@ -98,6 +98,9 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Products $product)
     {
+
+        $product->upDateProductImages($request);
+        
         $product->update($request->all());
         return redirect("product/$product->id");
     }
