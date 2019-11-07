@@ -46,3 +46,6 @@
 </div>
 
 @endsection
+
+
+{{-- <img src="../photos/profiles/{{$productDetails->user_id}}/products/{{$productDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  --}}

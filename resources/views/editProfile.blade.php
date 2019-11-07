@@ -18,7 +18,7 @@
                     @csrf
                     @method('PUT')
                     <label class="col-md-6" for="file">Your Better Img</label>
-                    <input id="file-input" name="file" type="file" multiple/>
+                    <input id="file-input" name="file" type="file"/>
                     <label class="col-md-6" for="first_name">FirstName</label>
                     <input class="col-md-6" type="text" name="first_name" value={{$profile->first_name}}>
                     <label class="col-md-6" for="last_name">last_name</label>

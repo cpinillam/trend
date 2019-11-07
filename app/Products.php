@@ -46,19 +46,35 @@ class Products extends Model
          {
              $file=$data->file('file');
              $extension=$file->getClientOriginalExtension();
+<<<<<<< HEAD
              $file_name=$this->user_id.'.'.$extension;
              $file->storeAs("users/$this->user_id/profile_images",$file_name);  
                
              
+=======
+
+             $date=$file->getCTime();
+             $file_name=$this->id.'-'.$date.'.'.$extension;
+             $file->storeAs("users/products/$this->id",$file_name);
+
+
+>>>>>>> 2872bc80ae94de2e9bab268e8b952fc3f5841298
              return "Image Uploaded";
              
          }
  
      }
+<<<<<<< HEAD
  
      public function getProfileImage()
      {        
          $path="users/$this->user_id/profile_images/";
+=======
+
+     public function getProductsImages()
+     {
+         $path="users/products/$this->id/";
+>>>>>>> 2872bc80ae94de2e9bab268e8b952fc3f5841298
          $result=Storage::files($path);
          if(empty($result)){
              return "storage/default/default.svg";
