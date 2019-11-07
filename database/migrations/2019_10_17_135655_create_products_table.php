@@ -17,9 +17,10 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('name',100)->nullable();
-            $table->double('final_price',10)->nullable();
             $table->double('initial_price',10)->nullable();
+            $table->double('final_price',10)->nullable();
             $table->text('description', 500)->nullable();
+            $table->boolean('sellable')->true();
             $table->bigInteger('points')->nullable();
             $table->timestamps();
         });
