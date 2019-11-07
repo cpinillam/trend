@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfileRelationToUsersTable extends Migration
+class CreateItemsOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddProfileRelationToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) 
-        {
-            // $table->foreign('profile_id')->references('id')->on('profiles');    
+        Schema::create('items_order', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('product_id')->unsigned();
+            $table->bigInteger('order_id')->unsigned();
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class AddProfileRelationToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('items_order');
     }
 }
