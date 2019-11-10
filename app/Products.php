@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Storage;
 class Products extends Model
 {
 
+
+
     public function User(){
 
         return $this->hasOne('App\User');
@@ -29,9 +31,6 @@ class Products extends Model
     */
     }
 
-    public function addPoints($id_product){
-        $id_product->update();
-    }
 
     protected $fillable = [
         'user_id','name','description', 'initial_price', 'points'
@@ -72,6 +71,12 @@ class Products extends Model
 
 
          return $result;
+     }
+
+     public function PointsAdd($product)
+
+     {
+         Products::where('id', $product->id)->update(['points' => ($product->points)+1]);
      }
 
 
