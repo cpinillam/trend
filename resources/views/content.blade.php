@@ -12,7 +12,7 @@
                 @foreach ($profiles as $index => $profile)
                 
                     <div class="profile-container col-4" style="position: relative; padding:15px;">
-                        <form action="{{route('profile.show',$profile->id)}}" method="get" style="position: relative; height:130px;">
+                        <form action="{{route('profile.show',$profile->id)}}" method="get">
                                 @csrf
 
                                 <img class="img-profile" src="{{asset($profile_Image[$index])}}"> 

@@ -17,7 +17,7 @@
                         
                         @foreach ($productImages as $productImage )
                       
-                        <div style="width:300px; height: 300px; background-color:grey;">
+                        <div class="productDetailImgContainer">
                         <img src="../storage/{{$productImage}}" style="width:100%; heigth:auto; background-color:black;"  alt=".">  
                        
                         </div>

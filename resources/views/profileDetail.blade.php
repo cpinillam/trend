@@ -18,9 +18,9 @@
 
                     <div class="col-md-6">
                        
-                        <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
+                        <div class="rounded-circle profileImgDetailContainer">
                                                             
-                            <img src="{{asset($profile_Image)}}" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                            <img src="{{asset($profile_Image)}}" class="rounded-circle profileDetailImg" alt=".">  
                             
                         </div>
                 
