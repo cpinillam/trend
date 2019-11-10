@@ -52,9 +52,14 @@
 }
 
 .profileImgDetailContainer {
-  width: 200px;
+  width: 90%;
   height: 200px;
   background-color: grey;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .profileDetailImg {
@@ -64,6 +69,18 @@
      object-fit: cover;
   -o-object-position: top center;
      object-position: top center;
+}
+
+.profileInfo p {
+  margin-bottom: 0.5rem;
+}
+
+.profileInfo .socialNetwork {
+  margin: 0 5px;
+}
+
+.profileInfo .socialNetwork i {
+  font-size: 25px;
 }
 
 .productDetailImgContainer {
