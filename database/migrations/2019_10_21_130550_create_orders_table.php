@@ -15,8 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('creation_date');
-            $table->double('total_price');
+            $table->bigInteger('seller_id')->nullable();
+            $table->date('creation_date')->nullable();
+            $table->double('total_price')->nullable();
         });
     }
 

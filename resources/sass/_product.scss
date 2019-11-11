@@ -1,0 +1,12 @@
+.productDetailImgContainer{    
+    width:200px;
+    height: 200px;
+    background-color:grey;
+    overflow: hidden;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
+}
