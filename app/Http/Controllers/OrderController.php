@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Products;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders::All();
+      
     }
 
     /**
@@ -35,7 +36,10 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $data = $request->validate([
+        
+
+       ]);
     }
 
     /**
@@ -70,6 +74,12 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+    }
+
+    public function checkout(Products $product)
+    {
+        return view('checkout',['product'=> $product]);
+
     }
 
     /**
