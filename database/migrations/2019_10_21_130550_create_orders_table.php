@@ -14,11 +14,21 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
+
+
             $table->bigIncrements('id');
-            $table->bigInteger('seller_id')->nullable();
+            $table->BigInteger('product_id')->nullble();
+            $table->double('price')->nullable();
+            $table->bigInteger('status_id')->unsigned();
             $table->date('creation_date')->nullable();
-            $table->double('total_price')->nullable();
+
+            // $table->foreign('product_id')->references('id')->on('products');
+            // $table->foreign('price')->references('final_price')->on('products');
+            
+        
         });
+
+        
     }
 
     /**
