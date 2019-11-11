@@ -11,7 +11,8 @@ Route::resource('/profile','ProfileController');
 
 Route::resource('/product','ProductsController');
 
-//Route::get('/product/{product}/', 'ProductsController@show')->middleware('points', '{product}');
+
+Route::get('/product/{product}/', 'ProductsController@show')->middleware('points');
 
 // Proteccion de rutas
 
