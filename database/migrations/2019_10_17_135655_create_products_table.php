@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->double('initial_price',10)->nullable();
             $table->text('description', 500)->nullable();
             $table->bigInteger('points')->nullable();
-            $table->boolean('sellable')->true;
+            $table->boolean('sellable')->default(true);
             $table->timestamps();
         });
     }

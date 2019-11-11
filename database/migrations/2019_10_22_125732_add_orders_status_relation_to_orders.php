@@ -14,8 +14,8 @@ class AddOrdersStatusRelationToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->bigInteger('status_id')->nullable();
-            $table->foreign('status_id')->references('id')->on('orders_status');
+            /* $table->bigInteger('status_id')->nullable();
+            $table->foreign('status_id')->references('id')->on('orders_status'); */
         });
     }
 
