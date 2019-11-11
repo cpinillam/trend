@@ -17,13 +17,12 @@ class CreateOrdersTable extends Migration
 
 
             $table->bigIncrements('id');
-            $table->BigInteger('product_id')->nullble();
+            $table->BigInteger('product_id')->unsigned()->nullable();
             $table->double('price')->nullable();
             $table->bigInteger('status_id')->unsigned();
             $table->date('creation_date')->nullable();
 
-            // $table->foreign('product_id')->references('id')->on('products');
-            // $table->foreign('price')->references('final_price')->on('products');
+            
             
         
         });
