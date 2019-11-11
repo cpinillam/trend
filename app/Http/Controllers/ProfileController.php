@@ -87,7 +87,7 @@ class ProfileController extends Controller
 
         $profile->update($request->all());
 
-        return redirect("profile/$profile->user_id");
+        return redirect("profile/$profile->id");
     }
 
     /**

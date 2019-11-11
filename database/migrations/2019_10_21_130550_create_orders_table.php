@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->BigInteger('product_id')->unsigned()->nullable();
             $table->double('price')->nullable();
             $table->bigInteger('status_id')->unsigned();
-            $table->date('creation_date')->nullable();
+            $table->timestamps();
 
             
             

@@ -16,4 +16,9 @@ class Order extends Model
     public function order_status(){
         return $this->hasOne('App\Order_status');
     }
+
+    public function sendToStripe(){
+        //this is url redirect to the api
+        return true;
+    }
 }

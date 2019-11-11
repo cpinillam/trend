@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Products;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders::All();
+      
     }
 
     /**
@@ -35,7 +38,30 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $data = $request->validate([
+        'product_id' => 'required',
+        'seller_id' => 'required',
+        'buyer_id' => 'required',
+        'total_price' => 'required',
+        
+        
+
+       ]);
+
+       $order = new Order;
+       $order->product_id=$request->product_id;
+       $order->seller_id=$request->seller_id;
+       $order->buyer_id=$request->buyer_id;
+       $order->price=$request->total_price;
+       $order->status_id=1;
+
+      
+
+
+       $order->save();
+      
+        return redirect("profile/$request->buyer_id");
+
     }
 
     /**
@@ -70,6 +96,13 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+    }
+
+    public function checkout(Products $product, User $user)
+    {
+        $seller = $user->where('id', $product->user_id)->first();
+        return view('checkout',['product'=> $product, 'seller' => $seller]);
+
     }
 
     /**
