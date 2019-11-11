@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfileRelationToUsersTable extends Migration
+class AddOrdersStatusRelationToOrders extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddProfileRelationToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) 
-        {
-            // $table->foreign('profile_id')->references('id')->on('profiles');    
+        Schema::table('orders', function (Blueprint $table) {
+            $table->bigInteger('status_id')->nullable();
+            $table->foreign('status_id')->references('id')->on('orders_status');
         });
     }
 
@@ -26,7 +26,7 @@ class AddProfileRelationToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             //
         });
     }

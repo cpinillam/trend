@@ -18,33 +18,17 @@
 
                     <div class="col-md-6">
                        
-                        <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
+                        <div class="profileImgDetailContainer">
                                                             
-                            <img src="{{asset($profile_Image)}}" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+                            <img src="{{asset($profile_Image)}}" class="profileDetailImg" alt=".">  
                             
                         </div>
                 
                     </div>
                         
              
-                    <div class="col-md-6">
-                        <h2>{{$profileDetails->username}}</h2>
-                        <p>{{$profileDetails->first_name}}</p>
-                        <p>{{$profileDetails->bio}}</p>
-
-                        
-                        <p>Firstname: {{$profileDetails->first_name}}</p>
-                        
-                        
-                        <p>{{$profileDetails->address}}</p>
-                        <p>Postal code: {{$profileDetails->post_code}}</p>
-
-                        <h2>Follow me at:</h2>
-                        <h6>Facebook: <a href="{{$profileDetails->facebook}}">{{$profileDetails->facebook}}</a></h6>
-                        <h6>Instagram: <a href="{{$profileDetails->instagram}}">{{$profileDetails->instagram}}</a></h6>
-                        <h6>Youtube: <a href="{{$profileDetails->youtube}}">{{$profileDetails->youtube}}</a></h6>
-                        <h6>Twitch: <a href="{{$profileDetails->twitch}}">{{$profileDetails->twitch}}</a></h6>
-
+                    <div class="col-md-6 profileInfo">
+                       @include("_profileInfo")
                     </div>
 
 
