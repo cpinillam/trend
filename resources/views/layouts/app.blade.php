@@ -66,7 +66,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="../profile/{{ Auth::user()->id }}">
+                                    <a class="dropdown-item" href="../profile/{{ Auth::user()->profile->id }}">
                                        Dashboard
                                     </a>
 

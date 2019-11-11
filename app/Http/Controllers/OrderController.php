@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\Products;
+use Auth;
 use App\User;
 
 use Illuminate\Http\Request;
@@ -38,6 +39,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+       
        $data = $request->validate([
         'product_id' => 'required',
         'seller_id' => 'required',
@@ -48,6 +50,7 @@ class OrderController extends Controller
 
        ]);
 
+
        $order = new Order;
        $order->product_id=$request->product_id;
        $order->seller_id=$request->seller_id;
@@ -55,12 +58,14 @@ class OrderController extends Controller
        $order->price=$request->total_price;
        $order->status_id=1;
 
-      
-
+       // TODO ASK $profile = Profile::where('user_id', $request->buyer_id)->first();
+       $profile = Auth::user()->profile->id;
+    
+        
 
        $order->save();
       
-        return redirect("profile/$request->buyer_id");
+        return redirect("profile/$profile");
 
     }
 
