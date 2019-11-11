@@ -18,7 +18,7 @@ class ProfileController extends Controller
     public function index(Profile $profile)
     {
 
-        
+
     }
 
     /**
@@ -28,8 +28,8 @@ class ProfileController extends Controller
      */
     public function create(array $data)
     {
+    }
 
-        /* --------------- To Do Ask diference Between create and store ---------- */ }
 
     /**
      * Store a newly created resource in storage.
@@ -39,7 +39,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //        
+        //
     }
 
     /**
@@ -50,23 +50,13 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        
+
         $currentImage = $profile->getProfileImage();
         $products = $profile->user->products;
-        return view('profileDetail', ['profileDetails' => $profile, 
-        'profile_Image' => $currentImage, 'userProducts' => $products]);
-    
-    }
-
-
-    public function showButtons (Profile $profile)
-    {
-        if ($this->authorize('showButtons', $profile)) {
-           
-            return view('profileDetail', ['profileDetails' => $profile]);
-        }
+        return view('profileDetail', ['profileDetails' => $profile, 'profile_Image' => $currentImage, 'userProducts' => $products]);
 
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -79,8 +69,8 @@ class ProfileController extends Controller
                 return view('editProfile', ['profile' => $profile]);
             }
             return view('content');
-    
-     
+
+
     }
 
     /**
@@ -94,9 +84,9 @@ class ProfileController extends Controller
     {
 
         $profile->upDateProfileImage($request);
-        
+
         $profile->update($request->all());
-        
+
         return redirect("profile/$profile->user_id");
     }
 
@@ -111,13 +101,8 @@ class ProfileController extends Controller
         //
     }
 
-    // To Do ask 
-    public function getProductsByUser($user)
-    {
-        $products = Products::all();
-        return view("profile/$user", ['products' => $products]);
-    }
-        
 
-        
+
+
+
 }

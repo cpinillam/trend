@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                
+
 
                 <div class="card-body" style="display:flex;">
                     @if (session('status'))
@@ -14,10 +14,50 @@
                         </div>
                     @endif
                     <div class="col-md-6">
-                        <div class="rounded-circle" style="width:200px; height: 200px; background-color:grey;">
-                      <img src="../photos/profiles/{{$productDetails->user_id}}/products/{{$productDetails->id}}.jpg" class="rounded-circle" style="width:200px; heigth:200px; background-color:black;"  alt=".">  
+
+
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+
+                        <div class="carousel-inner">
+
+                                @foreach ($productImages as $key => $productImage )
+
+                                <div class="carousel-item @if($key==0) active @endif">
+                                    <img class="d-block w-100 h-100" src="../storage/{{$productImage}}" alt="First slide">
+
+                                </div>
+                                @endforeach
+
+                            </div>
+
+
+
+
+
+
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+
+
+
+
+
+
                     </div>
-                    </div>
+
+
+
+
+
 
                     <div class="col-md-6">
                     <h1> {{$productDetails->name}}</h1>
@@ -26,7 +66,7 @@
                     <p> {{$productDetails->updated_at}}</p>
                     <button class="btn btn-danger"> Comprar</button>
                     </div>
-                    
+
                      </div>
 
                 </div>
@@ -36,10 +76,10 @@
                <a href="{{$productDetails->id}}/edit"> <button class="btn btn-primary btn-sm"> editar producto</button></a>
                @endCan
                 <div name="product" id="product" class="card-body" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
-                  
+
 
                 </div>
-                 
+
             </div>
         </div>
     </div>
