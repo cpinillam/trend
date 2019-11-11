@@ -33,7 +33,7 @@ class Products extends Model
 
 
     protected $fillable = [
-        'user_id','name','description', 'initial_price', 'points'
+        'user_id','name','description', 'initial_price', 'points','sellable'
     ];
 
 

@@ -12,16 +12,17 @@ class CreateProductsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('name',100)->nullable();
-            $table->double('final_price',10)->nullable();
             $table->double('initial_price',10)->nullable();
+            $table->double('final_price',10)->nullable();
             $table->text('description', 500)->nullable();
-            $table->bigInteger('points')->nullable();
-            $table->boolean('sellable')->true;
+            $table->boolean('sellable')->default(true);
+            $table->bigInteger('points')->default(0);
+          
             $table->timestamps();
         });
     }

@@ -14,9 +14,10 @@ class AddUsersRelationToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {           
-            $table->unsignedBigInteger('buyer_id');
-            $table->bigInteger('buyer_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('seller_id')->unsigned()->nullble();
+            $table->bigInteger('buyer_id')->unsigned()->nullble();
+            $table->foreign('seller_id')->references('id')->on('users');
+            $table->foreign('buyer_id')->references('id')->on('users');
         });
     }
 
