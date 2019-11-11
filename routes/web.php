@@ -10,6 +10,8 @@ Route::resource('/profile','ProfileController');
 
 
 Route::resource('/product','ProductsController');
+Route::resource('/order','OrderController');
+
 
 
 Route::get('/product/{product}/', 'ProductsController@show')->middleware('points');
