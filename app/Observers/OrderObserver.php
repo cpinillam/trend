@@ -15,8 +15,9 @@ class OrderObserver
      */
     public function created(Order $order)
     {
-       dd($order);
-        Products::where('id' );
+       
+        Products::where('id',  $order->product_id)->update(['sellable' => 0]);
+        
     }
 
     /**

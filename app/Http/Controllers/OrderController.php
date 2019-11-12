@@ -46,10 +46,7 @@ class OrderController extends Controller
         'buyer_id' => 'required',
         'total_price' => 'required',
         
-        
-
        ]);
-
 
        $order = new Order;
        $order->product_id=$request->product_id;
@@ -61,10 +58,8 @@ class OrderController extends Controller
        // TODO ASK $profile = Profile::where('user_id', $request->buyer_id)->first();
        $profile = Auth::user()->profile->id;
     
-        
-
        $order->save();
-      
+
         return redirect("profile/$profile");
 
     }

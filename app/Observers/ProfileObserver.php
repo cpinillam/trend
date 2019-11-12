@@ -15,7 +15,8 @@ class ProfileObserver
      */
     public function created(Profile $profile)
     {
-      User::where('id', $profile->id_user)->update(['profile_id' => $profile->id]);
+        
+      User::where('id', $profile->user_id)->update(['profile_id' => $profile->id]);
 
 
        

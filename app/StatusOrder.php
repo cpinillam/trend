@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order_status extends Model
+class StatusOrder extends Model
 {
-    //
     public function order()
     {
         return $this->hasMany('App\Order');
