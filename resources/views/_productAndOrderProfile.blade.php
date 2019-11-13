@@ -18,8 +18,10 @@
     </div>
 
     <div id="myOrders" class="tab-pane fade in" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
-        @foreach($myorders as $order)
-            <form action="../product/{{$order->product_id}}" method='get'><input type='submit' value="{{$order->product->name}}" class="btn btn-success" style='text-align:center;border-radius:5px;margin: 5px; padding: 38px 0; width: 100px;'></form>
-        @endforeach
+        @if($myorders->count() >= 1)
+            @foreach($myorders as $order)
+                <form action="../product/{{$order->product_id}}" method='get'><input type='submit' value="{{$order->product->name}}" class="btn btn-success" style='text-align:center;border-radius:5px;margin: 5px; padding: 38px 0; width: 100px;'></form>
+            @endforeach
+        @endif
     </div>
 </div>
