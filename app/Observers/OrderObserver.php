@@ -18,6 +18,7 @@ class OrderObserver
        
         Products::where('id',  $order->product_id)->update(['sellable' => 0]);
         
+        
     }
 
     /**
