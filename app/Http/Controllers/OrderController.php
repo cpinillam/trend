@@ -100,8 +100,32 @@ class OrderController extends Controller
 
     public function checkout(Products $product, User $user)
     {
-        $seller = $user->where('id', $product->user_id)->first();
-        return view('checkout',['product'=> $product, 'seller' => $seller]);
+        $currentUser = Auth::user();
+       /*  if($user->cannot('edit',$product)){
+            return redirect('/');
+        } */
+        if($this->authorize('isOwner',$product)){
+           
+            $seller = $user->where('id', $product->user_id)->first();
+            return view('checkout',['product'=> $product, 'seller' => $seller]);
+        }
+
+
+      /*   if($this->authorize('isNotOwner',$product)
+        {
+           $seller = $user->where('id', $product->user_id)->first();
+           return view('checkout',['product'=> $product, 'seller' => $seller]);
+        }  */
+        return redirect('/');
+        /* if($this->authorize('isOwner',$product)){
+            //dd($product);
+        }
+      
+         */
+           
+
+        
+       
 
     }
 

@@ -12,8 +12,8 @@ Route::resource('/profile','ProfileController');
 Route::resource('/product','ProductsController');
 Route::resource('/order','OrderController');
 
-
-
+//
+Route::get('/order/{product}/checkout','OrderController@checkout');
 Route::get('/product/{product}/', 'ProductsController@show')->middleware('points');
 Route::get('/checkout/{product}/', 'OrderController@checkout')->middleware('auth');
 

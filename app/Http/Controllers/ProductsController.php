@@ -85,9 +85,11 @@ class ProductsController extends Controller
      */
     public function edit(Products $product)
     {
+        
         if($this->authorize('edit',$product)){
             return view('products/products-edit-form', ['product' => $product]);
         }
+
         return view('content');
 
 

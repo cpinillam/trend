@@ -64,7 +64,11 @@
                     <h2>$ {{$productDetails->initial_price}}</h2>
                     <p> {{$productDetails->description}}</p>
                     <p> {{$productDetails->updated_at}}</p>
-                    <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger"> Comprar</a>
+
+                        @cannot('isNotOwner', $productDetails)
+                            <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
+                        @endcannot
+
                     </div>
 
                      </div>
