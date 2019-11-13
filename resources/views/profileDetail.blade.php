@@ -51,17 +51,8 @@
                     </div>
                     @endCan
                 </div>
-
-                <div class="card" style="margin-top:30px;">
-                <div class="card-header">:::: PRODUCTOS ::::</div>
-                <div name="product" id="product" class="card-body" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
-                  @foreach($userProducts as $product)
-                    <form action="../product/{{$product->id}}" method='get'><input type='submit' value="{{$product->name}}" class='btn btn-success' style='text-align:center;border-radius:5px;margin: 5px; padding: 38px 0; width: 100px;'></form>
-                  @endforeach
-
-                </div>
-
-            </div>
+                @include("_productAndOrderProfile")
+               
         </div>
     </div>
 </div>

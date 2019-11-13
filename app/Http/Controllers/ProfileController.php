@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Profile;
 use App\User;
 use App\Products;
+use App\Order;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -48,12 +49,17 @@ class ProfileController extends Controller
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(Profile $profile, Order $order)
     {
 
         $currentImage = $profile->getProfileImage();
         $products = $profile->user->products;
-        return view('profileDetail', ['profileDetails' => $profile, 'profile_Image' => $currentImage, 'userProducts' => $products]);
+        $orders = $profile->user->orders;
+   
+
+     
+
+        return view('profileDetail', ['profileDetails' => $profile, 'profile_Image' => $currentImage, 'userProducts' => $products, 'myorders' => $orders]);
 
     }
 
@@ -102,7 +108,9 @@ class ProfileController extends Controller
     }
 
 
+    public function getName($id){
 
+    }
 
 
 }
