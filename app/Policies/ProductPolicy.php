@@ -22,6 +22,33 @@ class ProductPolicy
 
     public function edit(User $user, Products $products):bool
     {
-        return $user->id === $products->user_id;
+       return $user->id === $products->user_id;
     }
+
+    //ToDo refactizar nombre de function
+
+    public function isOwner(User $user, Products $products):bool
+    {
+       $result = ($user->id === $products->user_id);
+       if(!$result)
+       {
+           return true;
+       }
+       return false;
+    }
+
+    public function isNotOwner(User $user, Products $products):bool
+    {   
+        $result = ($user->id !== $products->user_id);
+        if(!$result)
+        {
+            return true;   
+        }
+        return false;
+    }
+
+
+
+
+
 }
