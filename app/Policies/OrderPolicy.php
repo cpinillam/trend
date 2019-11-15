@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\User;
 use App\Order;
-use App\Products;
 
 
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -23,13 +22,9 @@ class OrderPolicy
         //
     }
 
-    public function checkout(User $user, Products $products):bool
+    public function isOwnerOfProduct(User $user, Order $order ):bool
     {
-        if($user->id === $products->user_id)
-        {
-           return true;
-        }
-        return false;
+        return $user->id === $order->buyer_id;
     }
 
 }

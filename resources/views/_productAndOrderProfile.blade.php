@@ -2,7 +2,9 @@
     <div class="card-header">
         <ul class="nav nav-pills">
             <li class="active"><a data-toggle="pill" class="btn btn-primary" href="#myProducts">MY PRODUCTS</a></li>
+            @can('isOwnerOfProduct', $myorders[0])
             <li class=""><a data-toggle="pill" class="btn btn-primary" href="#myOrders">MY Orders</a></li>
+            @endcan
         </ul>
     </div>
    
@@ -17,9 +19,13 @@
         </div>
     </div>
 
+    
+
     <div id="myOrders" class="tab-pane fade in" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
         @foreach($myorders as $order)
             <form action="../product/{{$order->product_id}}" method='get'><input type='submit' value="{{$order->product->name}}" class="btn btn-success" style='text-align:center;border-radius:5px;margin: 5px; padding: 38px 0; width: 100px;'></form>
         @endforeach
     </div>
+
+    
 </div>
