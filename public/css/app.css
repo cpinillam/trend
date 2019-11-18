@@ -101,6 +101,50 @@
      object-position: top center;
 }
 
+.likid-body-login {
+  background: #19182c;
+}
+
+.likit-container {
+  position: relative;
+}
+
+.likit-container .icon-container {
+  height: 100%;
+  position: absolute;
+  width: 67px;
+  background: #373c5a;
+  border-radius: 50px;
+}
+
+.likit-container .likit-input {
+  border-radius: 30px;
+  padding-left: 50px;
+  height: 50px;
+  background: rgba(77, 77, 111, 0.38);
+  border: solid;
+  border-color: #2d2c45;
+}
+
+.likit-container .likit-input:focus {
+  background: rgba(77, 77, 111, 0.38);
+  border: solid;
+  border-color: rgba(77, 77, 111, 0.38);
+  -webkit-box-shadow: initial;
+  box-shadow: initial;
+}
+
+.likit-container i {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 15px;
+  height: 15px;
+  bottom: 0;
+  color: #bbb;
+  margin: auto;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
