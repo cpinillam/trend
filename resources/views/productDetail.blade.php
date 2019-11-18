@@ -66,7 +66,9 @@
                     <p> {{$productDetails->updated_at}}</p>
 
                         @cannot('isNotOwner', $productDetails)
-                            <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
+                            @can('isNotSold', $productDetails)
+                                <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
+                            @endcan
                         @endcannot
 
                     </div>

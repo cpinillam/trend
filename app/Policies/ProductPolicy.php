@@ -48,6 +48,16 @@ class ProductPolicy
     }
 
 
+    public function isNotSold(User $user, Products $products):bool
+    {
+       if($products->sellable)
+       {
+           return true;
+       }
+       return false;
+    }
+
+
 
 
 
