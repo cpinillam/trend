@@ -2,13 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
-use App\Products;
-use App\User;
-
-
 
 class HomeController extends Controller
 {
@@ -29,11 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
-        //$products=Products::get()->where('user_id', );
-        $products=Products::all();
-        return view('home', ['products' => $products]);
-
+        return view('home');
     }
 }

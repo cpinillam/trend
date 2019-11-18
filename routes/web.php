@@ -2,7 +2,7 @@
 
 
 
-Route::get('/', 'SiteController@index');
+Route::get('/', 'SiteController@vista');
 
 Auth::routes();
 
@@ -28,3 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

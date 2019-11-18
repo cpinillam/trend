@@ -5,9 +5,11 @@
                 <div class="card">
                     <div class="card-header">Example Component</div>
 
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
+                    <ul>
+                        <li  v-for="profile in profiles" :key="profile.id">
+                            {{profile.username}}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -16,8 +18,23 @@
 
 <script>
     export default {
+        data()  {
+            return {
+                profiles:"",
+            }
+        },
+         
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.'),
+            this.fetchData()
+        },
+
+        methods : {
+            fetchData(){
+                axios.get('/api/fetchProfile').then((response)=>{
+                    this.profiles = response.data.profiles
+                })
+            }
         }
     }
 </script>
