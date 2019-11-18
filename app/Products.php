@@ -22,7 +22,7 @@ class Products extends Model
 
     public function getFeaturedProducts(){
 
-       $featuredProducts = Products::all()->sortByDesc('points')->take('6');
+       $featuredProducts = Products::all()->where("sellable", true)->sortByDesc('points')->take('6');
        return $featuredProducts;
 
     //To Do Ask Correct Use

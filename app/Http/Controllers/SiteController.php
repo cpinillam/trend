@@ -12,7 +12,7 @@ class SiteController extends Controller
 {
     public function index(Profile $profile, Products $products)
     {
-
+ 
         $profiles = Profile::all()->take(6);
         $currentImage = $profile->getProfileImageForIndex($profiles);
         $exclusive_products = $products->getFeaturedProducts();
