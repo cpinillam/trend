@@ -6,9 +6,10 @@
                     <div class="card-header">Example Component</div>
 
                     <ul>
-                        <li  v-for="profile in profiles" :key="profile.id">
+                        <li>{{ name }}</li>
+                        <!-- <li  v-for="profile in profiles" :key="profile.id">
                             {{profile.username}}
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -21,6 +22,7 @@
         data()  {
             return {
                 profiles:"",
+                name: "Home Page",
             }
         },
          
@@ -29,12 +31,12 @@
             this.fetchData()
         },
 
-        methods : {
+        /* methods : {
             fetchData(){
                 axios.get('/api/fetchProfile').then((response)=>{
                     this.profiles = response.data.profiles
                 })
             }
-        }
+        } */
     }
 </script>
