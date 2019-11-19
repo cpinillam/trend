@@ -99,6 +99,7 @@
      object-position: top center;
 }
 
+<<<<<<< HEAD
 .container div div div div form .buttonGrandParent .buttonParent .singInButton {
   background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
   background: linear-gradient(90deg, #109ad8, #3b3bd1);
@@ -107,6 +108,50 @@
   outline: none;
   border-radius: 2rem;
   color: white;
+=======
+.likid-body-login {
+  background: #19182c;
+}
+
+.likit-container {
+  position: relative;
+}
+
+.likit-container .icon-container {
+  height: 100%;
+  position: absolute;
+  width: 67px;
+  background: #373c5a;
+  border-radius: 50px;
+}
+
+.likit-container .likit-input {
+  border-radius: 30px;
+  padding-left: 50px;
+  height: 50px;
+  background: rgba(77, 77, 111, 0.38);
+  border: solid;
+  border-color: #2d2c45;
+}
+
+.likit-container .likit-input:focus {
+  background: rgba(77, 77, 111, 0.38);
+  border: solid;
+  border-color: rgba(77, 77, 111, 0.38);
+  -webkit-box-shadow: initial;
+  box-shadow: initial;
+}
+
+.likit-container i {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 15px;
+  height: 15px;
+  bottom: 0;
+  color: #bbb;
+  margin: auto;
+>>>>>>> 680881150ec3a522279f6b703f6e83d8c2a2a456
 }
 
 /*!

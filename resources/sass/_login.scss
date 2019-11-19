@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container{
     div{
         div{
@@ -22,3 +23,46 @@
         }
     }
 }
+=======
+.likid-body-login{
+    background:#19182c;
+}
+.likit {
+    &-container{
+
+        position: relative;
+        .icon-container{
+            height: 100%;
+            position: absolute;
+            width: 67px;
+            background: $likid-icon-bg;
+            border-radius: 50px;
+        }
+        .likit-input {
+            border-radius: 30px;
+            padding-left: 50px;
+            height: 50px;
+            background: $likid-input-bg;
+            border:solid;
+            border-color: $likid-input-border;
+            &:focus {
+                background: $likid-input-bg;
+                border:solid;
+                border-color: $likid-input-bg;
+                -webkit-box-shadow:initial;
+                box-shadow:initial;
+            }
+        }
+        i{
+            position: absolute;
+            top:0;
+            left:25px;
+            font-size: 15px;
+            height: 15px;
+            bottom:0;
+            color: #bbb;
+            margin: auto;
+        }
+    }
+} 
+>>>>>>> 680881150ec3a522279f6b703f6e83d8c2a2a456
