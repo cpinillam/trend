@@ -1,7 +1,21 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
+    <div class="imageLogingContainner">
+    
+    <img src="{{asset("storage/login_armour/part1.png")}}"/>
+    <img src="{{asset("storage/login_armour/part3.png")}}"/>
+    <img class="glowArmor" src="{{asset("storage/login_armour/part2.png")}}"/>
+    <img src="{{asset("storage/login_armour/brillo1.png")}}"/>
+    <img class="" src="{{asset("storage/login_armour/brillo2.png")}}"/>
+    <img class="brillo" src="{{asset("storage/login_armour/brillo3.png")}}"/>
+    <img class="brillo" src="{{asset("storage/login_armour/brillo4.png")}}"/>
+    <img class="" src="{{asset("storage/login_armour/brillo5.png")}}"/>
+   
+    
+</div>
     <div class="row justify-content-center">
         <div class="col-8">
                {{ __('Login') }}
@@ -14,10 +28,11 @@
                           
                             <div class="col-12">
                                 <div class="likit-container">
+                                    <input id="email" type="email" placeholder="Email" class="likit-input form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                
                                     <div  class="icon-container">
                                         <i class="fas fa-envelope"></i>
                                     </div>
-                                    <input id="email" type="email" placeholder="Email" class="likit-input form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 </div>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -31,10 +46,11 @@
 
                             <div class="col-12">
                                 <div class="likit-container">
+                                    <input id="password" type="password" placeholder="Password" class="likit-input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    
                                     <div  class="icon-container">
                                         <i class="fas fa-lock"></i>
                                     </div>
-                                    <input id="password" type="password" placeholder="Password" class="likit-input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 </div>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
