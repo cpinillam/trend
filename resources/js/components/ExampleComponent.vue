@@ -5,12 +5,12 @@
                 <div class="card">
                     <div class="card-header">Example Component</div>
 
-                    <ul>
+                   <!--  <ul>
                         <li>{{ name }}</li>
-                        <!-- <li  v-for="profile in profiles" :key="profile.id">
+                         <li  v-for="profile in profiles" :key="profile.id">
                             {{profile.username}}
-                        </li> -->
-                    </ul>
+                        </li> 
+                    </ul> -->
                 </div>
             </div>
         </div>
@@ -26,17 +26,17 @@
             }
         },
          
-        mounted() {
+      /*   mounted() {
             console.log('Component mounted.'),
             this.fetchData()
-        },
+        }, */
 
-        /* methods : {
+         /* methods : {
             fetchData(){
                 axios.get('/api/fetchProfile').then((response)=>{
                     this.profiles = response.data.profiles
                 })
             }
-        } */
+        } */ 
     }
 </script>
