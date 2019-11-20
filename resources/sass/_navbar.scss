@@ -22,31 +22,33 @@
 background: url(storage/burger_menu.svg);
 }
 
-.likit-nav-button{
-    border: none;
-    border-radius: 30px;
-    background: $gradient-blue;
-    padding: 0px 15px;
-    margin-left: 20px;
-    position: relative;
-    width: 100px;
-    .nav-link{
-        z-index: 99;
-        position: absolute;
-        width: 70px;
-    }
-    &:after{
-        content: "";
-        background: #19182c;
-        width: 94%;
-        display: block;
-        height: 90%;
-        border-radius: 35px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
+@media (min-width: 767px) {
+    .likit-nav-button{
+        border: none;
+        border-radius: 30px;
+        background: $gradient-blue;
+        padding: 0px 15px;
+        margin-left: 20px;
+        position: relative;
+        width: 100px;
+        .nav-link{
+            z-index: 99;
+            position: absolute;
+            width: 70px;
+        }
+        &:after{
+            content: "";
+            background: #19182c;
+            width: 94%;
+            display: block;
+            height: 90%;
+            border-radius: 35px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
     }
 }
