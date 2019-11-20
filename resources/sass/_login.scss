@@ -99,10 +99,9 @@ input:-webkit-autofill:active {
     img{
         width: 100%;
         position: absolute;
-        &.glowArmor,
-        &.brillo {
-            -webkit-animation: armor 1.5s infinite alternate;
-            animation: armor 1.5s infinite alternate;
+        &.glowArmor{
+            -webkit-animation: armor 3.5s infinite alternate;
+            animation: armor 3.5s infinite alternate;
         }
     }
 
@@ -110,7 +109,7 @@ input:-webkit-autofill:active {
         content: "";
         width: 50px;
         height: 50px;
-        background: #f00;
+        background: #33878a;
         display: block;
         position: absolute;
         filter: blur(60px);
@@ -130,7 +129,7 @@ input:-webkit-autofill:active {
         content: "";
         width: 60px;
         height: 60px;
-        background: #000;
+        background: #33878a;
         display: block;
         position: absolute;
         filter: blur(70px);
@@ -147,44 +146,41 @@ input:-webkit-autofill:active {
     }
 
 }
+
 @keyframes armor {
-  0%   {opacity:1;}
-  100% {opacity:0;}
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fog {
-    0% {
-        left: 50px;
-        top: 300px;
-        transform: rotate(10deg);
-    }
+   0%{
+    opacity: 0;
+   }
+   100%{
+    opacity: 0.2;
+   }
+}
 
-    20% {
-        left: 150px;
-        top: 150px;
-        transform: rotate(100deg);
-    }
+.fixedGloss {
 
-    40% {
-        left: 300px;
-        top: 300px;
-        transform: rotate(40deg);
-    }
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    left: 0;
+    box-shadow: 0px -50px 163px 30px #f34a6b;
+    background: #f34a6b;
+    filter: blur(100px);
+    opacity: 0.2;
 
-    60% {
-        left: 100px;
-        top: 20px;
-        transform: rotate(30deg);
-    }
-    80% {
-        left: 200px;
-        top: 250px;
-        transform: rotate(70deg);
-    }
-    100% {
-        left: 175px;
-        top: -100px;
-        transform: rotate(120deg);
-    }
+    -webkit-animation: fog 3.5s infinite alternate;
+    animation: fog 3.5s infinite alternate;
+
 }
 
