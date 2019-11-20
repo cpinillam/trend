@@ -21,12 +21,7 @@ class OrderController extends Controller
       
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *Controller
-    {
-        //
-    }
+  
 
     /**
      * Store a newly created resource in storage.
@@ -37,6 +32,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
        
+
        $data = $request->validate([
         'product_id' => 'required',
         'seller_id' => 'required',
@@ -52,14 +48,24 @@ class OrderController extends Controller
        $order->price=$request->total_price;
        $order->status_id=1;
 
-       // TODO ASK $profile = Profile::where('user_id', $request->buyer_id)->first();
-       $profile = Auth::user()->profile->id;
+       
+       
     
-       $order->save();
 
+      
+       $order->chargeStripe($request); 
+
+
+       $order->save();
+       
+            
+        // TODO ASK $profile = Profile::where('user_id', $request->buyer_id)->first();
+        $profile = Auth::user()->profile->id;
         return redirect("profile/$profile");
 
     }
+
+ 
 
     /**
      * Display the specified resource.
