@@ -1,3 +1,23 @@
-.navbar{
-    background:$gradient-blue;
+.likit-transparent {
+    background: transparent;
+} 
+.navbar-brand{
+    z-index: 99;
+    width: 80px;
+}
+
+.navbar-light .navbar-nav .likit.nav-link {
+    color: aqua;
+}
+
+.navbar-light .burger-menu.navbar-toggler {
+
+     color: aqua;
+     border-color: aqua;
+     ;
+
+}
+
+.navbar-light .likit.navbar-toggler-icon{
+background: url(storage/burger_menu.svg);
 }

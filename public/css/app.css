@@ -1,8 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-.navbar {
-  background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
-  background: linear-gradient(90deg, #109ad8, #3b3bd1);
+.likit-transparent {
+  background: transparent;
+}
+
+.navbar-brand {
+  z-index: 99;
+  width: 80px;
+}
+
+.navbar-light .navbar-nav .likit.nav-link {
+  color: aqua;
+}
+
+.navbar-light .burger-menu.navbar-toggler {
+  color: aqua;
+  border-color: aqua;
+}
+
+.navbar-light .likit.navbar-toggler-icon {
+  background: url(/images/burger_menu.svg?d9d996dcfe6e87c70bd458ab5230f5d3);
 }
 
 .filter-p {
@@ -331,8 +348,8 @@ input:-webkit-autofill:active {
   bottom: 0;
   z-index: 99;
   left: 0;
-  -webkit-box-shadow: 0px -50px 163px 30px #f34a6b;
-          box-shadow: 0px -50px 163px 30px #f34a6b;
+  -webkit-box-shadow: 0px -50px 163px 30px #f44349;
+          box-shadow: 0px -50px 163px 30px #f44349;
   background: #f34a6b;
   -webkit-filter: blur(100px);
           filter: blur(100px);
