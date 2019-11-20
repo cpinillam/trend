@@ -10,10 +10,12 @@ input:-webkit-autofill:active {
 }
 
 .likit {
-    &-body-login {
+    &-body-login,
+    &-body-register {
         background: #19182c;
     }
-    &-singIn{
+    &-singIn,
+    &-register {
         &-Button {
             background: $gradient-blue;
             padding: 0.5rem;

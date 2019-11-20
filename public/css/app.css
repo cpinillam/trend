@@ -144,11 +144,13 @@ input:-webkit-autofill:active {
   color: #4f6879;
 }
 
-.likit-body-login {
+.likit-body-login,
+.likit-body-register {
   background: #19182c;
 }
 
-.likit-singIn-Button {
+.likit-singIn-Button,
+.likit-register-Button {
   background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
   background: linear-gradient(90deg, #109ad8, #3b3bd1);
   padding: 0.5rem;
