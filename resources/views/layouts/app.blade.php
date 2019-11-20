@@ -10,7 +10,7 @@
     <title>likit :D</title>
 
     <!-- Scripts -->
-
+    
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/vendor/dropzone.js') }}" defer></script>
 
@@ -22,6 +22,8 @@
 
     <!-- Styles -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
+
 
 </head>
 <body>
@@ -86,5 +88,6 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>
