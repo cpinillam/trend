@@ -2,14 +2,14 @@
     <div class="card-header">
         <ul class="nav nav-pills">
             <li class="active"><a data-toggle="pill" class="btn btn-primary" href="#myProducts">MY PRODUCTS</a></li>
-            @can('isOwnerOfProduct', $myorders[0])
-            <li class=""><a data-toggle="pill" class="btn btn-primary" href="#myOrders">MY Orders</a></li>
+            
+            @can('edit',$profileDetails)
+                <li class=""><a data-toggle="pill" class="btn btn-primary" href="#myOrders">MY Orders</a></li>
             @endcan
-        </ul>
+            </ul>
     </div>
    
 </div>
-
 <div class="tab-content">
     <div id="myProducts" class="tab-pane fade in active show"> 
         <div name="product" id="product" class="card-body" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
@@ -22,10 +22,13 @@
     
 
     <div id="myOrders" class="tab-pane fade in" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
+
         @if($myorders->count() >= 1)
-            @foreach($myorders as $order)
-                <form action="../product/{{$order->product_id}}" method='get'><input type='submit' value="{{$order->product->name}}" class="btn btn-success" style='text-align:center;border-radius:5px;margin: 5px; padding: 38px 0; width: 100px;'></form>
-            @endforeach
+            @can('isOwnerOfProduct', $myorders[0])
+                @foreach($myorders as $order)
+                    <form action="../product/{{$order->product_id}}" method='get'><input type='submit' value="{{$order->product->name}}" class="btn btn-success" style='text-align:center;border-radius:5px;margin: 5px; padding: 38px 0; width: 100px;'></form>
+                @endforeach
+            @endcan
         @endif
     </div>
 

@@ -55,7 +55,7 @@ class ProfileController extends Controller
         $currentImage = $profile->getProfileImage();
         $products = $profile->user->products;
         $orders = $profile->user->orders;
-   
+//dd(count($orders));
 
      
 
