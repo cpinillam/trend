@@ -49,7 +49,7 @@
                                 <a class="likit nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item likit-nav-button">
                                     <a class="likit nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
