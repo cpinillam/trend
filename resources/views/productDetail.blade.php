@@ -64,7 +64,11 @@
                     <h2>$ {{$productDetails->initial_price}}</h2>
                     <p> {{$productDetails->description}}</p>
                     <p> {{$productDetails->updated_at}}</p>
-
+                        
+                    @if (!Auth::user())
+                    <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
+                    @endif
+                    
                         @cannot('isNotOwner', $productDetails)
                             @can('isNotSold', $productDetails)
                                 <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
