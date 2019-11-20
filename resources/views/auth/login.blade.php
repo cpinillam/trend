@@ -4,11 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+               {{ __('Login') }}
 
-                <div class="card-body likid-body-login">
-                    <form method="POST" action="{{ route('login') }}">
+                <div class="row likid-body-login">
+                    <form method="POST" class="col-12" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -59,7 +58,7 @@
                                     </div>
 
 
-                                <button type="submit" class="singInButton col-12">
+                                <button type="submit" class="likit-singIn-Button col-12">
                                     {{ __('Login') }}
                                 </button>
 
@@ -73,7 +72,6 @@
 
                     </form>
                 </div>
-            </div>
         </div>
     </div>
 </div>

@@ -1,34 +1,22 @@
-.container{
-    div{
-        div{
-            div{
-                div{
-                    form{
-                        .buttonGrandParent {
-                            .form-check-label {
-                                color: #4f6879;
-                            }
-                            .buttonParent{
-                                .singInButton{
-                                    background: $gradient-blue;
-                                    padding:0.5rem;
-                                    border:none;
-                                    outline: none;
-                                    border-radius:2rem;
-                                    color:white;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+
+.form-check-label {
+    color: #4f6879;
+}
+
+.likit {
+    &-body-login {
+        background: #19182c;
+    }
+    &-singIn{
+        &-Button {
+            background: $gradient-blue;
+            padding: 0.5rem;
+            border: none;
+            outline: none;
+            border-radius: 2rem;
+            color: white;
         }
     }
-}
-.likid-body-login{
-    background:#19182c;
-}
-.likit {
     &-container{
 
         position: relative;
