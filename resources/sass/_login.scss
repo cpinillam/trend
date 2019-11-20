@@ -4,10 +4,13 @@
             div{
                 div{
                     form{
-                        .buttonGrandParent{
+                        .buttonGrandParent {
+                            .form-check-label {
+                                color: #4f6879;
+                            }
                             .buttonParent{
                                 .singInButton{
-                                    background: linear-gradient(90deg,#109ad8,#3b3bd1);
+                                    background: $gradient-blue;
                                     padding:0.5rem;
                                     border:none;
                                     outline: none;
@@ -38,11 +41,15 @@
         }
         .likit-input {
             border-radius: 30px;
-            padding-left: 50px;
+            padding-left: 80px;
             height: 50px;
             background: $likid-input-bg;
             border:solid;
             border-color: $likid-input-border;
+            color:$likid-input-placeholder;
+            &:-webkit-input-placeholder, &:placeholder {
+                color:$likid-input-placeholder;
+            }
             &:focus {
                 background: $likid-input-bg;
                 border:solid;
