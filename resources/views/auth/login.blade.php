@@ -16,7 +16,6 @@
 </div>
     <div class="row justify-content-center">
         <div class="col-8">
-               {{ __('Login') }}
 
                 <div class="row likid-body-login">
                     <form method="POST" class="col-12" action="{{ route('login') }}">
@@ -26,7 +25,7 @@
                           
                             <div class="col-12">
                                 <div class="likit-container">
-                                    <input id="email" type="email" placeholder="Email" class="likit-input form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="email" type="email" placeholder="Email" class="likit-input col-12 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 
                                     <div  class="icon-container">
                                         <i class="fas fa-envelope"></i>
@@ -44,7 +43,7 @@
 
                             <div class="col-12">
                                 <div class="likit-container">
-                                    <input id="password" type="password" placeholder="Password" class="likit-input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    <input id="password" type="password" placeholder="Password" class="likit-input col-12 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                     
                                     <div  class="icon-container">
                                         <i class="fas fa-lock"></i>
@@ -62,8 +61,8 @@
                         <div class="form-group row mb-0 buttonGrandParent">
                             <div class="col-12 buttonParent">
                                    <div class="col-12">
-                                        <div class="">
-                                            <input class="col-6 form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <div class="col-12">
+                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                             <label class="form-check-label" for="remember">
                                                 {{ __('Remember Me') }}

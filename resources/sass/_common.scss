@@ -2,5 +2,67 @@
    background: $likid-input-bg;
 }
 #app{
-background: $likid-bg;
+   background: $likid-bg;
+   height: 100vh;
+}
+
+.likit {   
+   &-singIn,
+   &-register {
+       &-Button {
+           background: $gradient-blue;
+           padding: 0.5rem;
+           border: none;
+           outline: none;
+           border-radius: 2rem;
+           color: white;
+           margin-top: 15px;
+           margin-bottom: 15px;
+       }
+   }
+}
+
+.likit-input {
+   border-radius: 30px;
+   padding-left: 80px !important;
+   height: 50px;
+   background: $likid-input-bg;
+   border:solid;
+   border-color: $likid-input-border;
+   color:$likid-input-placeholder;
+   &:-webkit-input-placeholder, &:placeholder {
+       color:$likid-input-placeholder;
+   }
+   &:focus {
+       background: $likid-input-bg;
+       border:solid;
+       border-color: $likid-input-bg;
+       -webkit-box-shadow:initial;
+       box-shadow:initial;
+       outline-width: 0;
+       &::placeholder {
+           color: $likid-input-placeholder;
+       }
+   }
+}
+.icon-container{
+   height: 100%;
+   position: absolute;
+   width: 67px;
+   background: $likid-icon-bg;
+   border-radius: 50px;
+   top:0;
+   left: 0;
+   transition: left 1s;
+   
+   i{
+       position: absolute;
+       top:0;
+       left:25px;
+       font-size: 15px;
+       height: 15px;
+       bottom:0;
+       color: #bbb;
+       margin: auto;
+   }
 }
