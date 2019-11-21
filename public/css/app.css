@@ -118,6 +118,8 @@
   background-size: contain;
   background-position: top right;
   background-repeat: no-repeat;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .profile-container form,
@@ -134,7 +136,11 @@
   margin: auto;
   width: 100%;
   text-align: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: url("https://upload.wikimedia.org/wikipedia/commons/5/54/Blank_Canvas_on_Transparent_Background.png");
+  background-color: rgba(255, 255, 255, 0.5);
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
   -webkit-transition: all 1s;
   transition: all 1s;
   font-size: 20px;
@@ -143,6 +149,7 @@
   left: 0;
   border: none;
   border-radius: 10px;
+  transition: all 1s;
 }
 
 .profile-container .img-profile,
@@ -162,6 +169,17 @@
 .product-container form {
   overflow: hidden;
   border-radius: 5px;
+}
+
+.profile-container:hover .vendido,
+.product-container:hover .vendido {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/5/54/Blank_Canvas_on_Transparent_Background.png");
+  background-color: rgba(255, 255, 255, 0);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .profile-container:hover input,
