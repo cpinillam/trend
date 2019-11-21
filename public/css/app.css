@@ -191,6 +191,15 @@
   font-size: 25px;
 }
 
+.likit-h1,
+.likit-edit-img {
+  color: #fff;
+}
+
+.likit-file {
+  padding-top: 7px;
+}
+
 .card-header {
   background: rgba(77, 77, 111, 0.38);
 }
@@ -209,7 +218,8 @@ body {
 }
 
 .likit-singIn-Button,
-.likit-register-Button {
+.likit-register-Button,
+.likit-forms-Button {
   background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
   background: linear-gradient(90deg, #109ad8, #3b3bd1);
   padding: 0.5rem;
@@ -271,6 +281,7 @@ body {
   left: 0;
   -webkit-transition: left 1s;
   transition: left 1s;
+  pointer-events: none;
 }
 
 .icon-container i {
@@ -308,6 +319,10 @@ hr {
   border-color: #325dd3 !important;
   -webkit-filter: blur(1px);
           filter: blur(1px);
+}
+
+.likit-margin-Bottom {
+  margin-bottom: 10px;
 }
 
 .productDetailImgContainer {

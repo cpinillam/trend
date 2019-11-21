@@ -6,39 +6,84 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+                <h1 class="likit-h1">Profile editor</h1>
 
-                <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data">
-               
-
-
-
-                    @csrf
-                    @method('PUT')
-                    <label class="col-md-6" for="file">Your Better Img</label>
-                    <input id="file-input" name="file" type="file"/>
-                    <label class="col-md-6" for="first_name">FirstName</label>
-                    <input class="col-md-6" type="text" name="first_name" value={{$profile->first_name}}>
-                    <label class="col-md-6" for="last_name">last_name</label>
-                    <input class="col-md-6" type="text" name="last_name" value={{$profile->last_name}}>
-                    <label class="col-md-6" for="bio">Bio</label>
-                    <input class="col-md-6" type="text" name="bio" value={{$profile->bio}} />
-                    <label class="col-md-6" for="address">Address</label>
-                    <input class="col-md-6" type="text" name="address" value={{$profile->address}}>
-                    <label class="col-md-6" for="post_code">post_code</label>
-                    <input class="col-md-6" type="text" name="post_code" value={{$profile->post_code}}>
-                    <label class="col-md-6" for="facebook">Facebook</label>
-                    <input class="col-md-6" type="url" name="facebook" value={{$profile->facebook}}>
-                    <label class="col-md-6" for="instagram">instagram</label>
-                    <input class="col-md-6" type="url" name="instagram" value={{$profile->instagram}}>
-                    <label class="col-md-6" for="youtube">youtube</label>
-                    <input class="col-md-6" type="url" name="youtube" value={{$profile->youtube}}>
-                    <label class="col-md-6" for="twitch">twitch</label>
-                    <input class="col-md-6" type="url" name="twitch" value={{$profile->twitch}}>
-                    <input type="submit" value="Save">
-                </form>
-            </div>
+            <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data"> 
+                @csrf
+                @method('PUT')
+                        <div class="likit-container likit-margin-Bottom">
+                            <input class="col-12 likit-input likit-file" id="file-input" name="file" type="file"/>
+                            <div  class="icon-container">
+                                <i class="far fa-file-image"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="FirstName" class="col-12 likit-input" type="text" name="first_name" value={{$profile->first_name}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Last name" class="col-12 likit-input" type="text" name="last_name" value={{$profile->last_name}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Bio" class="col-12 likit-input" type="text" name="bio" value={{$profile->bio}} />
+                            
+                            <div  class="icon-container">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Addres c/falsa n123 2º 3ª" class="col-12 likit-input" type="text" name="address" value={{$profile->address}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Postal code" class="col-12 likit-input" type="text" name="post_code" value={{$profile->post_code}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Facebook" class="col-12 likit-input" type="url" name="facebook" value={{$profile->facebook}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fab fa-facebook-square"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Instagram" class="col-12 likit-input" type="url" name="instagram" value={{$profile->instagram}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Youtube" class="col-12 likit-input" type="url" name="youtube" value={{$profile->youtube}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input placeholder="Twitch" class="col-12 likit-input" type="url" name="twitch" value={{$profile->twitch}}>
+                            
+                            <div  class="icon-container">
+                                <i class="fab fa-twitch"></i>
+                            </div>
+                        </div>
+                        <div class="likit-container likit-margin-Bottom">
+                            <input class="likit-forms-Button col-12" type="submit" value="Save">
+                        </div>
+            </form>
         </div>
     </div>
 </div>
