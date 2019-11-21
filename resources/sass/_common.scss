@@ -1,9 +1,16 @@
 .card-header{
    background: $likid-input-bg;
 }
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: $likid-bg !important;
+}
 #app{
-   background: $likid-bg;
-   height: 100vh;
+   height: 100%;
 }
 
 .likit {   
