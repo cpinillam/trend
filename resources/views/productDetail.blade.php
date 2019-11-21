@@ -64,13 +64,7 @@
                         <h2>$ {{$productDetails->initial_price}}</h2>
                         <p> {{$productDetails->description}}</p>
                         <p> {{$productDetails->updated_at}}</p>
-                    </div>
-
-
-                </div>
-
-                     <hr>
-                    <div class="row"> 
+                        
                         @if (!Auth::user())
                                 <a href="../checkout/{{$productDetails->id}}" class="likit-border-button">Comprar</a>
                         @endif
@@ -80,7 +74,13 @@
                                 <a href="../checkout/{{$productDetails->id}}" class="likit-border-button">Comprar</a>
                             @endcan
                         @endcannot
+                    </div>
 
+
+                </div>
+
+                     <hr>
+                    <div class="row"> 
                         @can('edit',$productDetails)
                             <a href="{{$productDetails->id}}/edit"> <button class="likit-border-button"> editar producto</button></a>
                         @endCan

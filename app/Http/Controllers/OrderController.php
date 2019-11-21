@@ -101,9 +101,10 @@ class OrderController extends Controller
         $currentUser = Auth::user();
        
         if($this->authorize('isOwner',$product)){
-           
             $seller = $user->where('id', $product->user_id)->first();
-            return view('checkout',['product'=> $product, 'seller' => $seller]);
+            
+            $imageProductSold= $user->getOrderProductImages($product->id);
+            return view('checkout',['product'=> $product, 'seller' => $seller, 'productImage' => $imageProductSold]);
         }
 
         return redirect('/');
