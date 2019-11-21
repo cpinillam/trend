@@ -4,10 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
 
 
-                <div class="card-body" style="display:flex;">
+                <div class="row card-body" style="display:flex;">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -59,36 +58,33 @@
 
 
 
-                    <div class="col-md-6">
-                    <h1> {{$productDetails->name}}</h1>
-                    <h2>$ {{$productDetails->initial_price}}</h2>
-                    <p> {{$productDetails->description}}</p>
-                    <p> {{$productDetails->updated_at}}</p>
+                    <div class="col-md-6 productInfo likit-margin-Bottom">
+
+                        <h1> {{$productDetails->name}}</h1>
+                        <h2>$ {{$productDetails->initial_price}}</h2>
+                        <p> {{$productDetails->description}}</p>
+                        <p> {{$productDetails->updated_at}}</p>
+                    </div>
+
+
+                </div>
+
+                     <hr>
+                    <div class="row"> 
+                        @if (!Auth::user())
+                                <a href="../checkout/{{$productDetails->id}}" class="likit-border-button">Comprar</a>
+                        @endif
                         
-                    @if (!Auth::user())
-                    <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
-                    @endif
-                    
                         @cannot('isNotOwner', $productDetails)
                             @can('isNotSold', $productDetails)
-                                <a href="../checkout/{{$productDetails->id}}" class="btn btn-danger">Comprar</a>
+                                <a href="../checkout/{{$productDetails->id}}" class="likit-border-button">Comprar</a>
                             @endcan
                         @endcannot
 
+                        @can('edit',$productDetails)
+                            <a href="{{$productDetails->id}}/edit"> <button class="likit-border-button"> editar producto</button></a>
+                        @endCan
                     </div>
-
-                     </div>
-
-                </div>
-                <div class="card" style="margin-top:30px;">
-                <div class="card-header">Comentarios</div>
-                @can('edit',$productDetails)
-               <a href="{{$productDetails->id}}/edit"> <button class="btn btn-primary btn-sm"> editar producto</button></a>
-               @endCan
-                <div name="product" id="product" class="card-body" style="display: flex; flex-wrap:wrap;justify-content:flex-start;">
-
-
-                </div>
 
             </div>
         </div>

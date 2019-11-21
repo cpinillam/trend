@@ -341,6 +341,12 @@ hr {
      object-position: top center;
 }
 
+.productInfo h1,
+.productInfo h2,
+.productInfo p {
+  color: #fff;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
