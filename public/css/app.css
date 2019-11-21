@@ -95,6 +95,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .navbar-nav .likit.dropdown-menu:before {
+    width: 99%;
+  }
+}
+
 .filter-p {
   position: absolute;
   width: 100%;

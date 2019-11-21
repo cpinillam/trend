@@ -84,3 +84,11 @@ background: url(storage/burger_menu.svg);
         }
     }
 }
+@media (max-width: 767px) {
+    .navbar-nav .likit.dropdown-menu {
+
+        &:before {
+            width: 99%;
+        }
+    }
+}
