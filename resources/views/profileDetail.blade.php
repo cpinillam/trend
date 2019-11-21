@@ -4,8 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
                 <div class="card-body" style="display:flex;">
                     @if(session('status'))
@@ -44,13 +42,12 @@
                     <div class="card-header" style="display:flex;">
                         <form action="{{route('profile.edit',$profileDetails->id)}}" method="get">
                         @csrf
-                        <input type="submit" class="btn btn-danger" value="* Edit Profile">
+                        <input type="submit" class="likit-border-button" value="Edit Profile">
                         </form>
 
-                        <a href="../new-product"><button class="btn btn-primary" style="margin-left:20px;" >+ Nuevo producto </button></a>
+                        <a href="../new-product"><button class="likit-border-button" style="margin-left:20px;" >+ Nuevo producto</button></a>
                     </div>
                     @endCan
-                </div>
                 @include("_productAndOrderProfile")
                
         </div>

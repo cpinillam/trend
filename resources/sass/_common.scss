@@ -73,3 +73,24 @@ body {
        margin: auto;
    }
 }
+
+ .likit-border-button {
+     border: solid $likid-bg;
+     border-radius: 30px;
+     background: $gradient-blue;
+     margin-left: 20px;
+     position: relative;
+     padding: 3px 15px;
+     min-width: 100px;
+     color:$likid-text-white;
+     transition: all 0.5s;
+     &:hover {
+         border: solid $likid-border-aqua;
+         transition: all 0.5s;
+     }
+
+ }
+ hr{
+     border-color: $hr-color !important;
+     filter: blur(1px);
+ }

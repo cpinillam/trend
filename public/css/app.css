@@ -174,6 +174,11 @@
      object-position: top center;
 }
 
+.profileInfo p,
+.profileInfo h2 {
+  color: #fff;
+}
+
 .profileInfo p {
   margin-bottom: 0.5rem;
 }
@@ -277,6 +282,32 @@ body {
   bottom: 0;
   color: #bbb;
   margin: auto;
+}
+
+.likit-border-button {
+  border: solid #19182c;
+  border-radius: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
+  background: linear-gradient(90deg, #109ad8, #3b3bd1);
+  margin-left: 20px;
+  position: relative;
+  padding: 3px 15px;
+  min-width: 100px;
+  color: #fff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.likit-border-button:hover {
+  border: solid aqua;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+hr {
+  border-color: #325dd3 !important;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 }
 
 .productDetailImgContainer {

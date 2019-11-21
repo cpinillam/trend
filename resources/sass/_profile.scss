@@ -65,6 +65,9 @@
     object-position: top center;
 }
 .profileInfo{
+    p, h2{
+        color:$likid-text-white;
+    }
     p{
         margin-bottom: 0.5rem;
     }
