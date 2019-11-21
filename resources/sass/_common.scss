@@ -1,0 +1,103 @@
+.card-header{
+   background: $likid-input-bg;
+}
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: $likid-bg !important;
+}
+#app{
+   height: 100%;
+}
+
+.likit {   
+   &-singIn,
+   &-register,
+   &-forms {
+       &-Button {
+           background: $gradient-blue;
+           padding: 0.5rem;
+           border: none;
+           outline: none;
+           border-radius: 2rem;
+           color: white;
+           margin-top: 15px;
+           margin-bottom: 15px;
+       }
+   }
+}
+
+.likit-input {
+   border-radius: 30px;
+   padding-left: 80px !important;
+   padding-right: 80px !important;
+   height: 50px;
+   background: $likid-input-bg;
+   border:solid;
+   border-color: $likid-input-border;
+   color:$likid-input-placeholder;
+   &:-webkit-input-placeholder, &:placeholder {
+       color:$likid-input-placeholder;
+   }
+   &:focus {
+       background: $likid-input-bg;
+       border:solid;
+       border-color: $likid-input-bg;
+       -webkit-box-shadow:initial;
+       box-shadow:initial;
+       outline-width: 0;
+       &::placeholder {
+           color: $likid-input-placeholder;
+       }
+   }
+}
+.icon-container{
+   height: 100%;
+   position: absolute;
+   width: 67px;
+   background: $likid-icon-bg;
+   border-radius: 50px;
+   top:0;
+   left: 0;
+   transition: left 1s;
+   pointer-events:none;
+   
+   i{
+       position: absolute;
+       top:0;
+       left:25px;
+       font-size: 15px;
+       height: 15px;
+       bottom:0;
+       color: #bbb;
+       margin: auto;
+   }
+}
+
+ .likit-border-button {
+     border: solid $likid-bg;
+     border-radius: 30px;
+     background: $gradient-blue;
+     margin-left: 20px;
+     position: relative;
+     padding: 3px 15px;
+     min-width: 100px;
+     color:$likid-text-white;
+     transition: all 0.5s;
+     &:hover {
+         border: solid $likid-border-aqua;
+         transition: all 0.5s;
+     }
+
+ }
+ hr{
+     border-color: $hr-color !important;
+     filter: blur(1px);
+ }
+
+ .likit-margin-Bottom{
+    margin-bottom: 10px;
+ }

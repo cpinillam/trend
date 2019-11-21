@@ -4,99 +4,90 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">EDIT Product</div>
-
-                <div class="card-body">
-                   {{--  <form action="/profile/{{$profile->id}}" method="post" enctype="multipart/form-data" class="dropzone"
-                        id="my-awesome-dropzone">
-
-
-
-
-                        @csrf
-                        @method('PUT')
-                        <label class="col-md-6" for="file">Your Better Img</label>
-                        <input id="file-input" name="file" type="file" multiple/>
- --}}
-
-
+                <h1 class="likit-h1">EDIT Product</h1>
 
                     <form method="POST" action="/product/{{$product->id}}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
-                        <div class="form-group row">
-                            <label for="fileImage" class="col-md-4 col-form-label text-md-right">{{ __('Images') }}</label>
+                        
+           
+                            
 
-                            <div class="col-md-6">
+                                <div class="likit-container likit-margin-Bottom">
+                                    <input id="fileImage" type="file" class="col-12 likit-input likit-file @error('fileImage') is-invalid @enderror" name="fileImage" required autofocus multiple>
+                                    <div  class="icon-container">
+                                        <i class="far fa-file-image"></i>
+                                    </div>
 
-                                <input id="fileImage" type="file" class="form-control @error('fileImage') is-invalid @enderror" name="fileImage" required autofocus multiple>
-
-                                @error('fileImage')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Product Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$product->name}}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="initial_price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
-
-                            <div class="col-md-6">
-
-                                <input id="initial_price" type="number" class="form-control @error('initial_price') is-invalid @enderror" name="initial_price" value="{{$product->initial_price}}" required autofocus>
-
-                                @error('initial_price')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
-
-                                <div class="col-md-6">
-
-                                    <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{$product->description}}" required autofocus>
-
-                                    @error('description')
+                                    @error('fileImage')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
 
 
-                        <button type="submit" class="btn btn-warning">
+                        
+                        
+                            
+                                <div class="likit-container likit-margin-Bottom">
+                                    <input id="name" type="text" class="col-12 likit-input @error('name') is-invalid @enderror" name="name" value="{{$product->name}}" required autocomplete="name" autofocus>
+
+                                    
+                                    <div  class="icon-container">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
+                        
+                      
+                            
+
+                                <div class="likit-container likit-margin-Bottom">
+                                    <input id="initial_price" type="number" class="col-12 likit-input @error('initial_price') is-invalid @enderror" name="initial_price" value="{{$product->initial_price}}" required autofocus>
+
+                            
+                                    <div  class="icon-container">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                    @error('initial_price')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
+                        
+                             
+                                
+
+                                    <div class="likit-container likit-margin-Bottom">
+                                        <input id="description" type="text" class="col-12 likit-input @error('description') is-invalid @enderror" name="description" value="{{$product->description}}" required autofocus>
+
+                                        <div  class="icon-container">
+                                            <i class="fas fa-align-left"></i>
+                                        </div>
+                                        @error('description')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+
+                        <button type="submit" class="likit-forms-Button col-12">
                                Editar
                             </button>
 
                     </form>
-
-                </div>
-            </div>
         </div>
     </div>
 </div>

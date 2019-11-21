@@ -21,7 +21,7 @@ class OrderController extends Controller
       
     }
 
-  
+    
 
     /**
      * Store a newly created resource in storage.
@@ -46,14 +46,9 @@ class OrderController extends Controller
        $order->seller_id=$request->seller_id;
        $order->buyer_id=$request->buyer_id;
        $order->price=$request->total_price;
-       $order->status_id=1;
-
        
-       
-    
-
-      
-       $order->chargeStripe($request); 
+       $charge = $order->chargeStripe($request);    
+       $order->status_id=5;
 
 
        $order->save();
@@ -104,27 +99,15 @@ class OrderController extends Controller
     public function checkout(Products $product, User $user)
     {
         $currentUser = Auth::user();
-       /*  if($user->cannot('edit',$product)){
-            return redirect('/');
-        } */
+       
         if($this->authorize('isOwner',$product)){
            
             $seller = $user->where('id', $product->user_id)->first();
             return view('checkout',['product'=> $product, 'seller' => $seller]);
         }
 
-
-      /*   if($this->authorize('isNotOwner',$product)
-        {
-           $seller = $user->where('id', $product->user_id)->first();
-           return view('checkout',['product'=> $product, 'seller' => $seller]);
-        }  */
         return redirect('/');
-        /* if($this->authorize('isOwner',$product)){
-            //dd($product);
-        }
-      
-         */
+        
            
 
         

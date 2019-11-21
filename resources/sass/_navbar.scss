@@ -1,0 +1,94 @@
+.likit-transparent {
+    background: transparent;
+} 
+.navbar-brand{
+    z-index: 99;
+    width: 80px;
+}
+
+.navbar-light .navbar-nav .likit.nav-link,
+.likit.dropdown-item {
+    color: aqua;
+}
+
+.navbar-light .burger-menu.navbar-toggler {
+
+     color: aqua;
+     border-color: aqua;
+}
+
+.navbar-light .likit.navbar-toggler-icon{
+background: url(storage/burger_menu.svg);
+}
+.likit .dropdown-item:hover,
+.likit .dropdown-item:focus{
+    background-color: initial;
+    color:#445dd1;
+}
+.navbar-nav .likit.dropdown-menu{
+    border: none;
+    border-radius: 10px;
+    background: $gradient-blue;
+    padding: 0px 15px;
+    margin-left: 20px;
+    position: relative;
+
+    .nav-link {
+        z-index: 99;
+        position: absolute;
+        width: 70px;
+    }
+    &:before {
+        content: "";
+        background: #19182c;
+        width: 97%;
+        display: block;
+        height: 94%;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+    }
+}
+@media (min-width: 767px) {
+    .likit-nav-button{
+        border: none;
+        border-radius: 30px;
+        background: $gradient-blue;
+        padding: 0px 15px;
+        margin-left: 20px;
+        position: relative;
+        width: 100px;
+        .nav-link{
+            z-index: 99;
+            position: absolute;
+            width: 70px;
+        }
+        &:after{
+            content: "";
+            background: #19182c;
+            width: 94%;
+            display: block;
+            height: 90%;
+            border-radius: 35px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .navbar-nav .likit.dropdown-menu {
+
+        &:before {
+            width: 99%;
+        }
+    }
+}

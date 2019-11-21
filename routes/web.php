@@ -10,7 +10,16 @@ Route::resource('/profile','ProfileController');
 
 
 Route::resource('/product','ProductsController');
+Route::post('/order','OrderController@createNewOrder');
 Route::resource('/order','OrderController');
+/* Route::get('issue-card/{msg}', function ($msg) {
+    return view('errors/illustrated-layout');
+}); */
+
+//Route::view('issue-card/{msg}', 'errors/illustrated-layout', ['msg' => '$msg']);
+Route::get('issue-card/{msg?}', function ($msg) {
+    return view('errors/illustrated-layout')->with('msg', $msg);
+});
 
 //
 Route::get('/order/{product}/checkout','OrderController@checkout');

@@ -64,14 +64,40 @@ class Products extends Model
      {
          $path="users/products/$this->id/";
          $result=Storage::files($path);
+
+
          if(empty($result)){
-             $empty = ['/default/default.svg'];
+             $empty = ['storage/default/default.svg'];
              return $empty;
          }
 
+        $indexProductsImages = array();
+         if (!empty($result)) {
+             foreach ($result as $value) {
+                 array_push($indexProductsImages, "storage/".$value);
+             }
+         }
 
-         return $result;
+         return $indexProductsImages;
      }
+
+
+    public function getProductImageForIndex($products)
+    {
+        $indexProductsImages = array();
+        foreach ($products as $index => $product) {
+            $path="users/products/$product->id"; 
+            $result=Storage::allFiles($path);
+                if (empty($result)) {
+                    $indexProductsImages[$index]="storage/default/default.svg";
+                }
+
+                if (!empty($result)) {
+                     $indexProductsImages[$index]='storage/'.$result[0];
+                }
+        } 
+        return $indexProductsImages; 
+    }
 
      public function PointsAdd($product)
 

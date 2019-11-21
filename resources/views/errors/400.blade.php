@@ -32,8 +32,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="default">{{ $exception ?? '' }}</h1>
-        <h1 id="custum">Sorry, you're not able to entry</h1>
+        <h1 id="default">{{ $exception->getMessage() }}</h1>
+        <h1 id="custum">400 Tenemos problemas con tu pago</h1>
         <a class="navbar-brand" href="{{ url('/') }}">Home</a>
     </div>
 </body>
