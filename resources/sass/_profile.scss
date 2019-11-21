@@ -8,7 +8,11 @@
     z-index:3;
 }
 
-.profile-container{
+.profile-container,
+.product-container {
+    .vendido{
+        background: rgba(255, 0, 0, 0.5);
+    }
     form{
         position: relative;
         height:130px;
@@ -26,8 +30,11 @@
         text-transform: capitalize;
         font-weight: bold;
         left:0;
+        border:none;
+        border-radius: 10px;
     }
-    .img-profile{
+    .img-profile,
+    .img-product {
         width: 100%;
         height: 100%;
         object-fit: cover;
