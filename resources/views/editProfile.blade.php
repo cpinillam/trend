@@ -42,14 +42,14 @@
                             <input placeholder="Addres c/falsa n123 2º 3ª" class="col-12 likit-input" type="text" name="address" value={{$profile->address}}>
                             
                             <div  class="icon-container">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-shipping-fast"></i>
                             </div>
                         </div>
                         <div class="likit-container likit-margin-Bottom">
                             <input placeholder="Postal code" class="col-12 likit-input" type="text" name="post_code" value={{$profile->post_code}}>
                             
                             <div  class="icon-container">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-shipping-fast"></i>
                             </div>
                         </div>
                         <div class="likit-container likit-margin-Bottom">
