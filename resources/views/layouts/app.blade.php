@@ -87,6 +87,12 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');filter: blur(15px);"></div>
+            </div>
+        </div>
     </div>
 
 </body>
