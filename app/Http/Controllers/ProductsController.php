@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Products;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Auth;
 
 
 
@@ -56,7 +57,9 @@ class ProductsController extends Controller
         $product->description = $request->description;
 
         $product->save();
-        return redirect("profile/$product->user_id");
+
+        $userAuth = Auth::user()->profile->id;
+        return redirect("profile/$userAuth");
 
 
     }

@@ -174,6 +174,11 @@
      object-position: top center;
 }
 
+.profileInfo p,
+.profileInfo h2 {
+  color: #fff;
+}
+
 .profileInfo p {
   margin-bottom: 0.5rem;
 }
@@ -184,6 +189,15 @@
 
 .profileInfo .socialNetwork i {
   font-size: 25px;
+}
+
+.likit-h1,
+.likit-edit-img {
+  color: #fff;
+}
+
+.likit-file {
+  padding-top: 7px;
 }
 
 .card-header {
@@ -204,7 +218,8 @@ body {
 }
 
 .likit-singIn-Button,
-.likit-register-Button {
+.likit-register-Button,
+.likit-forms-Button {
   background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
   background: linear-gradient(90deg, #109ad8, #3b3bd1);
   padding: 0.5rem;
@@ -219,6 +234,7 @@ body {
 .likit-input {
   border-radius: 30px;
   padding-left: 80px !important;
+  padding-right: 80px !important;
   height: 50px;
   background: rgba(77, 77, 111, 0.38);
   border: solid;
@@ -266,6 +282,7 @@ body {
   left: 0;
   -webkit-transition: left 1s;
   transition: left 1s;
+  pointer-events: none;
 }
 
 .icon-container i {
@@ -277,6 +294,36 @@ body {
   bottom: 0;
   color: #bbb;
   margin: auto;
+}
+
+.likit-border-button {
+  border: solid #19182c;
+  border-radius: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(#109ad8), to(#3b3bd1));
+  background: linear-gradient(90deg, #109ad8, #3b3bd1);
+  margin-left: 20px;
+  position: relative;
+  padding: 3px 15px;
+  min-width: 100px;
+  color: #fff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.likit-border-button:hover {
+  border: solid aqua;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+hr {
+  border-color: #325dd3 !important;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.likit-margin-Bottom {
+  margin-bottom: 10px;
 }
 
 .productDetailImgContainer {
@@ -293,6 +340,12 @@ body {
      object-fit: cover;
   -o-object-position: top center;
      object-position: top center;
+}
+
+.productInfo h1,
+.productInfo h2,
+.productInfo p {
+  color: #fff;
 }
 
 input:-webkit-autofill,

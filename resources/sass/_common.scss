@@ -15,7 +15,8 @@ body {
 
 .likit {   
    &-singIn,
-   &-register {
+   &-register,
+   &-forms {
        &-Button {
            background: $gradient-blue;
            padding: 0.5rem;
@@ -32,6 +33,7 @@ body {
 .likit-input {
    border-radius: 30px;
    padding-left: 80px !important;
+   padding-right: 80px !important;
    height: 50px;
    background: $likid-input-bg;
    border:solid;
@@ -61,6 +63,7 @@ body {
    top:0;
    left: 0;
    transition: left 1s;
+   pointer-events:none;
    
    i{
        position: absolute;
@@ -73,3 +76,28 @@ body {
        margin: auto;
    }
 }
+
+ .likit-border-button {
+     border: solid $likid-bg;
+     border-radius: 30px;
+     background: $gradient-blue;
+     margin-left: 20px;
+     position: relative;
+     padding: 3px 15px;
+     min-width: 100px;
+     color:$likid-text-white;
+     transition: all 0.5s;
+     &:hover {
+         border: solid $likid-border-aqua;
+         transition: all 0.5s;
+     }
+
+ }
+ hr{
+     border-color: $hr-color !important;
+     filter: blur(1px);
+ }
+
+ .likit-margin-Bottom{
+    margin-bottom: 10px;
+ }
