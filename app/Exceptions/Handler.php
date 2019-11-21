@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if($exception instanceof \Symfony\Component\Debug\Exception\FatalErrorException) {
-            return response()->view('errors.403', [], 403);
+            return response()->view('errors.400', [], 400);
         }
         return parent::render($request, $exception);
     }
