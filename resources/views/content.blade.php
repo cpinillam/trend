@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header col-12">Profiles</div>
             </div>
@@ -28,19 +28,17 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header col-12">Exclusive Products</div>
             </div>
             <div class="row">
-                @foreach ($exclusive_products as $exclusive_product)
+                @foreach ($exclusive_products as $index => $exclusive_product)
                 
                     <div class="profile-container col-4" style="position: relative; padding:15px;">
                         <form action="product/{{$exclusive_product->id}}" method="get" style="position: relative; height:130px;">
                                 @csrf
-
-                                <!-- <img class="img-profile" src="{{asset($profile_Image[$index])}}">   -->
-                               
+                                <img class="img-profile" src="{{asset($productImg[$index])}}">                            
                                 <input type="submit" value="{{$exclusive_product->name}}" class="btn" style="">
                              </form>
                     </div>

@@ -74,7 +74,6 @@ class ProductsController extends Controller
     {
        
         $productImages = $product->getProductsImages();
-        
         return view('productDetail', ['productDetails' => $product, 'productImages' => $productImages]);
 
 

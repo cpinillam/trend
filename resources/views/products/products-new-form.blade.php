@@ -36,6 +36,23 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <div class="likit-container likit-margin-Bottom">
+                                    <input id="fileImage" type="file" class="col-12 likit-input likit-file @error('fileImage') is-invalid @enderror" name="fileImage" required autofocus multiple>
+                                    <div  class="icon-container">
+                                        <i class="far fa-file-image"></i>
+                                    </div>
+
+                                    @error('fileImage')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <div class="likit-container likit-margin-Bottom">
                                     <input placeholder="Price" id="initial_price" type="number" class="col-12 likit-input @error('initial_price') is-invalid @enderror" name="initial_price" value="{{ old('initial_price') }}" required autofocus>
 
                                         <div  class="icon-container">

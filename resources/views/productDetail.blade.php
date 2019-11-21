@@ -23,7 +23,7 @@
                                 @foreach ($productImages as $key => $productImage )
 
                                 <div class="carousel-item @if($key==0) active @endif">
-                                    <img class="d-block w-100 h-100" src="../storage/{{$productImage}}" alt="First slide">
+                                    <img class="d-block w-100 h-100" src="{{asset($productImage)}}" alt="First slide">
 
                                 </div>
                                 @endforeach
