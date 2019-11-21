@@ -4,12 +4,7 @@
 @section('content')
 <div class="container">
 
-    <div class="imageLogingContainner">
-        <img src="{{asset("storage/login_armour/part1.png")}}"/>
-        <img src="{{asset("storage/login_armour/part3.png")}}"/>
-        <img class="glowArmor" src="{{asset("storage/login_armour/part2.png")}}"/>
-        <div class="fixedGloss">
-    </div>
+    @include("_armor")
 
    
     
