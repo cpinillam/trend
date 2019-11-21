@@ -14,7 +14,7 @@
                        
             <form action="../product/{{$product->id}}" method='get'>
             <img class="img-product" src="{{asset($myProductsImage[$index])}}"> 
-                <input type='submit' class="{{$product->sellable ? 'novendido' :  'vendido'}}" value="{{$product->sellable ? $product->name :  "#$product->id VENDIDO"}}" class="btn" ></form>
+                <input type='submit' class="{{$product->sellable ? 'novendido' :  'vendido'}}" value="{{$product->sellable ? $product->name :  ""}}" class="btn" ></form>
         </div>
         @endforeach
         </div>

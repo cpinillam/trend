@@ -113,7 +113,11 @@
 
 .profile-container .vendido,
 .product-container .vendido {
-  background: rgba(255, 0, 0, 0.5);
+  background: url("https://www.ropata.co.nz/wp-content/uploads/2017/11/sold-baaner-ribbon.png");
+  background-color: rgba(255, 255, 255, 0.5);
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
 }
 
 .profile-container form,
