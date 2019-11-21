@@ -39,7 +39,7 @@
                                     <input placeholder="Price" id="initial_price" type="number" class="col-12 likit-input @error('initial_price') is-invalid @enderror" name="initial_price" value="{{ old('initial_price') }}" required autofocus>
 
                                         <div  class="icon-container">
-                                            <i class="fas fa-user"></i>
+                                            <i class="fas fa-dollar-sign"></i>
                                         </div>
                                     @error('initial_price')
                                         <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                                         <input placeholder="Description" id="description" type="text" class="col-12 likit-input @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autofocus>
         
                                         <div  class="icon-container">
-                                            <i class="fas fa-user"></i>
+                                            <i class="fas fa-align-left"></i>
                                         </div>
                                         @error('description')
                                             <span class="invalid-feedback" role="alert">

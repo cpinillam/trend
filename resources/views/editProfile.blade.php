@@ -35,7 +35,7 @@
                             <input placeholder="Bio" class="col-12 likit-input" type="text" name="bio" value={{$profile->bio}} />
                             
                             <div  class="icon-container">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-align-left"></i>
                             </div>
                         </div>
                         <div class="likit-container likit-margin-Bottom">

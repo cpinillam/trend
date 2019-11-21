@@ -234,6 +234,7 @@ body {
 .likit-input {
   border-radius: 30px;
   padding-left: 80px !important;
+  padding-right: 80px !important;
   height: 50px;
   background: rgba(77, 77, 111, 0.38);
   border: solid;

@@ -55,7 +55,7 @@
 
                             
                                     <div  class="icon-container">
-                                        <i class="fas fa-user"></i>
+                                        <i class="fas fa-dollar-sign"></i>
                                     </div>
                                     @error('initial_price')
                                         <span class="invalid-feedback" role="alert">
@@ -73,7 +73,7 @@
                                         <input id="description" type="text" class="col-12 likit-input @error('description') is-invalid @enderror" name="description" value="{{$product->description}}" required autofocus>
 
                                         <div  class="icon-container">
-                                            <i class="fas fa-user"></i>
+                                            <i class="fas fa-align-left"></i>
                                         </div>
                                         @error('description')
                                             <span class="invalid-feedback" role="alert">
