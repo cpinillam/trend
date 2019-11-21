@@ -49,17 +49,18 @@ class ProfileController extends Controller
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile, Order $order)
+    public function show(Profile $profile, Order $order, Products $product)
     {
 
         $currentImage = $profile->getProfileImage();
         $products = $profile->user->products;
+        $currentProdImage = $product->getProductImageForIndex($products);
         $orders = $profile->user->orders;
 //dd(count($orders));
 
      
 
-        return view('profileDetail', ['profileDetails' => $profile, 'profile_Image' => $currentImage, 'userProducts' => $products, 'myorders' => $orders]);
+        return view('profileDetail', ['profileDetails' => $profile, 'profile_Image' => $currentImage, 'userProducts' => $products, 'myorders' => $orders, 'myProductsImage' => $currentProdImage]);
 
     }
 

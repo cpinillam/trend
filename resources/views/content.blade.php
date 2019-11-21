@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<div class="container col-sm-12">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-10 col-lg-8 col-sm-12">
             <div class="card">
                 <div class="card-header col-12">Profiles</div>
             </div>
@@ -26,9 +26,9 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container col-sm-12">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-10 col-lg-8 col-sm-12">
             <div class="card">
                 <div class="card-header col-12">Exclusive Products</div>
             </div>
