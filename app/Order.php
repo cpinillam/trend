@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Stripe_Error;
 
 class Order extends Model
 {
@@ -27,19 +28,89 @@ class Order extends Model
         return true;
     }
 
-    public function chargeStripe($request)
+
+
+// STRIPE IMPLEMENTATION //
+
+    public function StripeCurrency()
     {
-       \Stripe\Stripe::setApiKey('sk_test_sjPRGbhY92CRP4XYNr5Zut6L00d5X33dZT');
-
-
-
-        $charge = \Stripe\Charge::create([
-            'amount' => $request->total_price*100,
-            'currency' => 'eur',
-            'description' => 'Product # ' .$request->product_id. 'Sale By: ' .$request->seller_id. 'Buy by: '. $request->buyer_id,
-            'source' => $request->stripeToken,
-        ]);
+        $stripeCurrency = 'eur';
+        return $stripeCurrency;
+        
     }
 
+    public function StripeDescription($request)
+    {
+        $stripeDescription = 'Product ID # ' .$request->product_id. ' Vendido por el usuario # ' .$request->seller_id. ' Comprado por el Usuario # '. $request->buyer_id;
+        return $stripeDescription;
+         
+    }
+
+    public function StripeAmount($price)
+    {
+        $stripeAmount = $price*100;
+        return $stripeAmount;
+         
+    }
+
+
+    public function chargeStripe($request)
+    {
+        try {
+          
+
+                \Stripe\Stripe::setApiKey('sk_test_sjPRGbhY92CRP4XYNr5Zut6L00d5X33dZT');
+
+                    $charge = \Stripe\Charge::create([
+                        'amount' => $this->StripeAmount($request->total_price),
+                        'currency' => $this->StripeCurrency(),
+                        'description' => $this->StripeDescription($request),
+                        'source' => $request->stripeToken,
+                    ]);
+                                        
+                    $this->setNewOwner($charge, $request);
+                    
+                return $charge;
+
+
+      
+      } catch(\Stripe\Exception\CardException $e) {
+        
+        
+        header('Location: /issue-card/'.$e->getError()->message);
+       
+       
+    
+      } 
+
+    }
+
+
+    public function setNewOwner($charge, $request)
+    {
+        if ($this->getStatusCharge($charge)){
+            $this->changeProductOwner($request);
+        }
+
+        
+        
+    }
+
+    public function getStatusCharge ($charge){
+        if ($charge->status === 'succeeded'){
+            return true;           
+        }
+        return false;
+
+    }
+
+
+    public function changeProductOwner($request){
+        Products::where('id',  $request->product_id)->update(['user_id' => $request->buyer_id, 'sellable' => 0]);
+    }
+
+
+    
+    
 
 }
