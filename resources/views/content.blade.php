@@ -6,11 +6,10 @@
 @include("_banner-home")
 
 <div class="container col-sm-12">
+<div class="container col-sm-12  likit-margin-Bottom">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8 col-sm-12">
-            <div class="card">
-                <div class="card-header col-12">Profiles</div>
-            </div>
+        <div class="col-md-10 col-lg-6 col-sm-12">
+            <h1 class="likit-h1">Cosplayers & Makers</h1>
             <div class="row">
                 @foreach ($profiles as $index => $profile)
                 
@@ -29,12 +28,10 @@
     </div>
 </div>
 
-<div class="container col-sm-12">
+<div class="container col-sm-12  likit-margin-Bottom">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8 col-sm-12">
-            <div class="card">
-                <div class="card-header col-12">Exclusive Products</div>
-            </div>
+        <div class="col-md-10 col-lg-6 col-sm-12">
+            <h1 class="likit-h1">Exclusive Products</h1>
             <div class="row">
                 @foreach ($exclusive_products as $index => $exclusive_product)
                 
