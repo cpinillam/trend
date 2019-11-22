@@ -4,6 +4,6 @@
     </div>
 
     <div class="col-6" style="position: relative;height:100%;">    
-        <img class="col-12"   src="images/text-home.png">
+        <img class="col-12 text"   src="images/text-home.png">
     </div>
 </div>

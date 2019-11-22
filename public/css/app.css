@@ -375,6 +375,13 @@ hr {
      object-position: left;
 }
 
+.banner .text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .productDetailImgContainer {
   width: 200px;
   height: 200px;
