@@ -3,10 +3,7 @@
 @section('content')
 
 
-<div class="container col-sm-12">
-
-
-</div>
+@include("_banner-home")
 
 <div class="container col-sm-12">
     <div class="row justify-content-center">
