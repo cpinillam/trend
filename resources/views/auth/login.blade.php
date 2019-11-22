@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="container">
+<div class="container col-8">
 
     @include("_armor")
 

@@ -1,4 +1,4 @@
-<div class="row col-lg-8 col-md-8 col-sm-12 offset-md-2" style="height: 280px;overflow:hidden;">
+<div class="banner row col-lg-8 col-md-8 col-sm-12 offset-md-2" style="height: 280px;overflow:hidden;">
     <div class="col-4 offset-1" style="position:relative; height:100%;">  
         @include("_armor")
     </div>
